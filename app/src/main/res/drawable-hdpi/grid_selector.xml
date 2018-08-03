@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+    <!--<item android:drawable="@color/pressed"
+        android:alpha="0.9"
+        android:state_pressed="true" />-->
+    <!--<item android:drawable="@drawable/button_normal_green" />-->
+    <!-- without 'default', button image will return to original image.-->
+
+    <item android:state_pressed="true" >
+        <shape>
+            <stroke
+                android:width="2dp"
+                android:color="#FF4719" />
+            <corners android:radius="10dp" />
+        </shape>
+    </item>
+</selector>

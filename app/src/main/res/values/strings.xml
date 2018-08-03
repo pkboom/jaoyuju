@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">자오유주</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
+    <string name="alarm_on">혈자리가 변경될 때마다 알람이 울립니다</string>
+    <string name="help">help</string>
+    <string name="sendemail">메일보내기</string>
+    <string name="renew">새로고치기</string>
+    <string name="title_activity_ganji">음력간지보기</string>
+
+    <color name="black">#000000</color>
+
+    <string name="title_section1">section1</string>
+    <string name="title_section2">section2</string>
+    <string name="title_section3">section3</string>
+    <string name="title_activity_ungi">운기체형</string>
+    <string name="title_activity_ungi_year">올해운기</string>
+    <string name="title_activity_hands2">14기맥</string>
+    <string name="title_activity_threeone2">삼일체형</string>
+    <string name="title_activity_yangsil">양실증</string>
+    <string name="title_activity_sinsil">신실증</string>
+    <string name="title_activity_eumsil">음실증</string>
+    <string name="title_activity_bokjindo">Bokjindo</string>
+    <string name="yangsil">질병: 변비, 설사, 장염, 소화불량, 가슴답답, 배에 가스 참, 고혈압, 3,4요추요통(디스크)</string>
+    <string name="yangsil2">통치방: 1)상응요법: 증상 1~2곳 \n
+       2)기맥요법: 대장제법(폐보법)\n
+       3)반지요법: 1,2지\n
+       4)승증장부 기모혈: A3, A12, A16, A18, N18, E22</string>
+    <string name="sinsil">질병: 피로, 과로, 적으로 배꼽밑에 차가운 어혈,
+                수족냉증, 하복부통증(냉증), 알러지, 류머티즘, 월경통, 소변분리,
+                 제 1,2선골, 엉치 허리 통증  </string>
+    <string name="sinsil2">통치방: 1)상응요법: 증상 1~2곳 \n
+       2)기맥요법: 신제법(심보법)\n
+       3)반지요법: 1,4,5지\n
+       4)승증장부 기모혈: A5, A6, A12, C1, J23, N18</string>
+    <string name="eumsil">질병: 영양과다, 배설이 잘 안됨, 비만초래,
+               당뇨, 성인병, 콜레스테롤, 제2선골 이하의 요통, 좌골신경통, 관절통,
+               사지무력(특히 다리, 잘 넘어짐)</string>
+    <string name="eumsil2">통치방: 1)상응요법: 증상 1~2곳 \n
+       2)기맥요법: 비제법(신보법)\n
+       3)반지요법: 2, 3, ,4지\n
+       4)승증장부 기모혈: A3, A16, A18, F19, C1, N17</string>
+    <string name="title_activity_jaotable">Jaotable</string>
+    <string name="title_activity_eightholes">서금8혈</string>
+    <string name="title_activity_threeosix">입태일 306일</string>
+    <string name="title_activity_three_osix">ThreeOSix</string>
+    <string name="title_activity_timer">Timer</string>
+    <string name="title_activity_timer_sec2">Timer</string>
+    <string name="title_activity_popup">PopupActivity</string>
+    <string name="title_activity_dialog">Dialog</string>
+    <string name="title_activity_popup_dialog">PopupDialog</string>
+    <string name="title_activity_jangbu_jisu">장부지수</string>
+    <string name="title_activity_ochi">오치방</string>
+    <string name="title_activity_ungi_now">현재운기</string>
+    <string name="title_activity_body">금경</string>
+    <string name="title_activity_card_list">진료리스트</string>
+    <string name="title_activity_card_form">form</string>
+    <string name="menu_search">Search</string>
+    <string name="menu_explanation">설명</string>
+    <string name="menu_upload">업로드</string>
+    <string name="menu_download">다운로드</string>
+    <string name="menu_gotomain">메인으로</string>
+    <string name="banner_ad_unit_id">ca-app-pub-1253642133922353/2152469025</string>
+
+</resources>

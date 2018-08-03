@@ -1,0 +1,23 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="com.sujichim.jasanjao.MainActivity" >
+
+<!--
+    <item
+        android:id="@+id/action_settings"
+        android:orderInCategory="100"
+        android:title="@string/action_settings"
+        app:showAsAction="never"/>
+-->
+    <item
+        android:id="@+id/sendemail"
+        android:title="@string/sendemail"
+        android:icon="@drawable/ic_email_white_24dp"
+        app:showAsAction="ifRoom"/>
+    <item
+        android:id="@+id/renew"
+        android:title="@string/renew"
+        android:icon="@drawable/ic_refresh_white_24dp"
+        app:showAsAction="ifRoom"/>
+</menu>

@@ -1,0 +1,2 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merger version="3"><dataSet config="main"><source path="/home/y/project/jaoyuju/app/src/main/assets"><file name="julgi24.xls" path="/home/y/project/jaoyuju/app/src/main/assets/julgi24.xls"/></source><source path="/home/y/project/jaoyuju/app/build/generated/assets/shaders/release"/></dataSet><dataSet config="release"><source path="/home/y/project/jaoyuju/app/src/release/assets"/></dataSet></merger>

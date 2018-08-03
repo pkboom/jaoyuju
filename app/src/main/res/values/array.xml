@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="spinnerArray1">
+        <item>간</item>
+        <item>심</item>
+        <item>심포</item>
+        <item>비</item>
+        <item>폐</item>
+        <item>신</item>
+        <item>담</item>
+        <item>소장</item>
+        <item>삼초</item>
+        <item>위</item>
+        <item>대장</item>
+        <item>방광</item>
+    </string-array>
+    <string-array name="spinnerArray2">
+        <item>정방</item>
+        <item>승방</item>
+        <item>한방</item>
+        <item>열방</item>
+        <item>풍방</item>
+        <item>습방</item>
+        <item>조방</item>
+        <item>수방</item>
+    </string-array>
+    <string-array name="spinnerArray3">
+        <item>풍방</item>
+        <item>습방</item>
+        <item>조방</item>
+        <item>수방</item>
+    </string-array>
+
+
+    <string-array name="spinnerArray4">
+        <item>간승</item>
+        <item>심승</item>
+        <item>비승</item>
+        <item>폐승</item>
+        <item>신승</item>
+    </string-array>
+    <string-array name="spinnerArray5">
+        <item>담승</item>
+        <item>소장승</item>
+        <item>위승</item>
+        <item>대장승</item>
+        <item>방광승</item>
+    </string-array>
+    <string-array name="spinnerArray6">
+        <item>좌양실</item>
+        <item>좌신실</item>
+        <item>좌음실</item>
+    </string-array>
+    <string-array name="spinnerArray7">
+        <item>우양실</item>
+        <item>우신실</item>
+        <item>우음실</item>
+    </string-array>
+    <string-array name="spinnerArray8">
+        <item>간승</item>
+        <item>간허</item>
+        <item>심승</item>
+        <item>심허</item>
+        <item>비승</item>
+        <item>비허</item>
+        <item>폐승</item>
+        <item>폐허</item>
+        <item>신승</item>
+        <item>신허</item>
+    </string-array>
+    <string-array name="spinnerArray9">
+        <item>담승</item>
+        <item>담허</item>
+        <item>소장승</item>
+        <item>소장허</item>
+        <item>위승</item>
+        <item>위허</item>
+        <item>대장승</item>
+        <item>대장허</item>
+        <item>방광승</item>
+        <item>방광허</item>
+    </string-array>
+    <string-array name="spinnerArray10">
+        <item>담승</item>
+        <item>소장승</item>
+        <item>삼초승</item>
+        <item>위승</item>
+        <item>대장승</item>
+        <item>방광승</item>
+        <item>간승</item>
+        <item>심승</item>
+        <item>심포승</item>
+        <item>비승</item>
+        <item>폐승</item>
+        <item>신승</item>
+    </string-array>
+    <string-array name="spinnerArray11">
+        <item>담기맥</item>
+        <item>소장기맥</item>
+        <item>삼초기맥</item>
+        <item>위기맥</item>
+        <item>대장기맥</item>
+        <item>방광기맥</item>
+        <item>간기맥</item>
+        <item>심기맥</item>
+        <item>심포기맥</item>
+        <item>비기맥</item>
+        <item>폐기맥</item>
+        <item>신기맥</item>
+    </string-array>
+    <string-array name="spinnerArray12">
+        <item>비승, 담승</item>
+        <item>간승, 대장승</item>
+        <item>폐승, 소장승</item>
+        <item>심승, 방광승</item>
+        <item>신승, 위승</item>
+    </string-array>
+
+</resources>

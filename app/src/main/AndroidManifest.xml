@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.sujichim.jasanjao2">
+
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@drawable/hemark"
+        android:label="@string/app_name"
+        android:theme="@style/AppTheme">
+        <activity
+            android:name=".MainActivity"
+            android:configChanges="orientation|screenSize"
+            android:label="@string/app_name"
+            android:screenOrientation="portrait">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <receiver android:name=".MyReceiver" />
+
+        <service
+            android:name=".BroadcastService"
+            android:enabled="true" />
+        <service
+            android:name=".BroadcastService2"
+            android:enabled="true" />
+
+        <activity
+            android:name=".Ungi"
+            android:configChanges="orientation|screenSize"
+            android:label="@string/title_activity_ungi"
+            android:parentActivityName=".MainActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".UngiYear"
+            android:configChanges="orientation|screenSize"
+            android:label="@string/title_activity_ungi_year"
+            android:parentActivityName=".MainActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".Hands2"
+            android:configChanges="orientation|screenSize"
+            android:label="@string/title_activity_hands2"
+            android:parentActivityName=".MainActivity" />
+        <activity
+            android:name=".Threeone2"
+            android:configChanges="orientation|screenSize"
+            android:label="@string/title_activity_threeone2"
+            android:parentActivityName=".MainActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".Yangsil"
+            android:configChanges="orientation|screenSize"
+            android:label="@string/title_activity_yangsil"
+            android:parentActivityName=".Threeone2"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".Sinsil"
+            android:configChanges="orientation|screenSize"
+            android:label="@string/title_activity_sinsil"
+            android:parentActivityName=".Threeone2"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".Eumsil"
+            android:configChanges="orientation|screenSize"
+            android:label="@string/title_activity_eumsil"
+            android:parentActivityName=".Threeone2"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".Bokjindo"
+            android:configChanges="orientation|screenSize"
+            android:label="@string/title_activity_bokjindo"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".Eightholes"
+            android:configChanges="orientation|screenSize"
+            android:label="@string/title_activity_eightholes"
+            android:parentActivityName=".Threeone2"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".TimerSec2"
+            android:configChanges="orientation|screenSize"
+            android:label="@string/title_activity_timer_sec2"
+            android:parentActivityName=".MainActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".JangbuJisu"
+            android:configChanges="orientation|screenSize"
+            android:label="@string/title_activity_jangbu_jisu"
+            android:parentActivityName=".Ungi"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".Ochi"
+            android:configChanges="orientation|screenSize"
+            android:label="@string/title_activity_ochi"
+            android:parentActivityName=".MainActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".UngiNow"
+            android:configChanges="orientation|screenSize"
+            android:label="@string/title_activity_ungi_now"
+            android:parentActivityName=".MainActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".Body"
+            android:configChanges="orientation|screenSize"
+            android:label="@string/title_activity_body"
+            android:parentActivityName=".MainActivity"
+            android:screenOrientation="portrait" />
+        <activity android:name=".BodyPic" />
+        <activity
+            android:name=".card.List"
+            android:configChanges="orientation|screenSize"
+            android:label="@string/title_activity_card_list"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".card.Form"
+            android:configChanges="orientation|screenSize"
+            android:label="@string/title_activity_card_form"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".quiz.MainQuiz"
+            android:configChanges="orientation|screenSize"
+            android:parentActivityName=".MainActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".quiz.UngiQuiz"
+            android:configChanges="orientation|screenSize"
+            android:parentActivityName=".quiz.MainQuiz"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".quiz.BokjinQuiz2"
+            android:configChanges="orientation|screenSize"
+            android:parentActivityName=".quiz.MainQuiz"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".quiz.GiMac"
+            android:configChanges="orientation|screenSize"
+            android:parentActivityName=".quiz.MainQuiz"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".quiz.MacJin"
+            android:configChanges="orientation|screenSize"
+            android:parentActivityName=".quiz.MainQuiz"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".quiz.SanghapQuiz"
+            android:configChanges="orientation|screenSize"
+            android:parentActivityName=".quiz.MainQuiz"
+            android:screenOrientation="portrait" >
+        </activity>
+    </application>
+
+</manifest>

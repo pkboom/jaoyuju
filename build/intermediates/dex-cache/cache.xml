@@ -1,0 +1,401 @@
+<?xml version="1.0" encoding="utf-8"?>
+<items version="2" >
+
+    <item
+        is-multidex="false"
+        jar="/home/kb/AndroidStudioProjects/JasanJao/app/build/intermediates/exploded-aar/com.google.firebase/firebase-analytics/10.0.1/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="23.0.3"
+        sha1="433f4d6aa5f21f19552afe0e6c5eff0fedba73ad">
+        <dex dex="/home/kb/AndroidStudioProjects/JasanJao/app/build/intermediates/pre-dexed/release/com.google.firebase-firebase-analytics-10.0.1_db57698823cafbf6de56a60b4637bc0e1b9baf28.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/home/kb/AndroidStudioProjects/JasanJao/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-base/10.0.1/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="23.0.3"
+        sha1="25438f55fc6d906a0e72f30b21487541430ede43">
+        <dex dex="/home/kb/AndroidStudioProjects/JasanJao/app/build/intermediates/pre-dexed/release/com.google.android.gms-play-services-base-10.0.1_91588a896faf0c2269f82976812d24e4727b5c1c.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/home/kb/AndroidStudioProjects/JasanJao/app/libs/jxl.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.3"
+        sha1="7faf62e0697f7a88954622dfe8c8de33ed142ac7">
+        <dex dex="/home/kb/AndroidStudioProjects/JasanJao/app/build/intermediates/pre-dexed/debug/jxl_e5e05611917ffe35c7a3a18c72e5947e986c1505.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/home/kb/AndroidStudioProjects/JasanJao/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-gass/10.0.1/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="23.0.3"
+        sha1="57c2eceb8548de84509d1ebc293fedec53231f6c">
+        <dex dex="/home/kb/AndroidStudioProjects/JasanJao/app/build/intermediates/pre-dexed/release/com.google.android.gms-play-services-gass-10.0.1_f3b475062b4dfe5a463afefefaf847377f5ec461.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/home/kb/AndroidStudioProjects/JasanJao/app/build/intermediates/exploded-aar/com.google.firebase/firebase-iid/10.0.1/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="23.0.3"
+        sha1="486371f97baad8e607f332f20fee1d3dd00a731a">
+        <dex dex="/home/kb/AndroidStudioProjects/JasanJao/app/build/intermediates/pre-dexed/release/com.google.firebase-firebase-iid-10.0.1_b5c70a60f45f93ec183befe55ea82ab59c18f82d.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/home/kb/AndroidStudioProjects/JasanJao/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-gass/10.0.1/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.3"
+        sha1="57c2eceb8548de84509d1ebc293fedec53231f6c">
+        <dex dex="/home/kb/AndroidStudioProjects/JasanJao/app/build/intermediates/pre-dexed/debug/com.google.android.gms-play-services-gass-10.0.1_f3b475062b4dfe5a463afefefaf847377f5ec461.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/home/kb/AndroidStudioProjects/JasanJao/app/build/intermediates/incremental-runtime-classes/debug/instant-run.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.3"
+        sha1="36fcb0a46f46001fcfe0b7d17139c79291f484f7">
+        <dex dex="/home/kb/AndroidStudioProjects/JasanJao/app/build/intermediates/pre-dexed/debug/instant-run_9567b21139b44d4d2411c71cbebbe5a2b4e7d7bd.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/home/kb/AndroidStudioProjects/JasanJao/app/build/intermediates/exploded-aar/com.google.firebase/firebase-analytics/10.0.1/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.3"
+        sha1="433f4d6aa5f21f19552afe0e6c5eff0fedba73ad">
+        <dex dex="/home/kb/AndroidStudioProjects/JasanJao/app/build/intermediates/pre-dexed/debug/com.google.firebase-firebase-analytics-10.0.1_db57698823cafbf6de56a60b4637bc0e1b9baf28.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/home/kb/AndroidStudioProjects/JasanJao/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-tasks/10.0.1/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="23.0.3"
+        sha1="6addaba208e21c6da776d0ca75b6b23a6ccd5499">
+        <dex dex="/home/kb/AndroidStudioProjects/JasanJao/app/build/intermediates/pre-dexed/release/com.google.android.gms-play-services-tasks-10.0.1_cd6e68d4291373b5001af10b6bb10954b7bb3188.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/home/kb/AndroidStudioProjects/JasanJao/app/build/intermediates/exploded-aar/com.google.firebase/firebase-common/10.0.1/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="23.0.3"
+        sha1="eb0d830e3eabb9deb9ec44869cf7ac7ea1ad794c">
+        <dex dex="/home/kb/AndroidStudioProjects/JasanJao/app/build/intermediates/pre-dexed/release/com.google.firebase-firebase-common-10.0.1_3f57f1b3b640655185865f8845595e5ced868e81.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/home/kb/AndroidStudioProjects/JasanJao/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-ads-lite/10.0.1/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.3"
+        sha1="b955cb3a1ad6f1b6ff728ce1e0cd592c1717b440">
+        <dex dex="/home/kb/AndroidStudioProjects/JasanJao/app/build/intermediates/pre-dexed/debug/com.google.android.gms-play-services-ads-lite-10.0.1_f4ec3f57c8871ce177e0f70717dce5a4de3ca12e.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/home/kb/AndroidStudioProjects/JasanJao/app/build/intermediates/exploded-aar/com.google.firebase/firebase-iid/10.0.1/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.3"
+        sha1="486371f97baad8e607f332f20fee1d3dd00a731a">
+        <dex dex="/home/kb/AndroidStudioProjects/JasanJao/app/build/intermediates/pre-dexed/debug/com.google.firebase-firebase-iid-10.0.1_b5c70a60f45f93ec183befe55ea82ab59c18f82d.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/home/kb/AndroidStudioProjects/JasanJao/app/libs/jxl.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="23.0.3"
+        sha1="7faf62e0697f7a88954622dfe8c8de33ed142ac7">
+        <dex dex="/home/kb/AndroidStudioProjects/JasanJao/app/build/intermediates/pre-dexed/release/jxl_e5e05611917ffe35c7a3a18c72e5947e986c1505.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/home/kb/AndroidStudioProjects/JasanJao/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.4.0/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.3"
+        sha1="548f06de403a9409f00554b3ee12a9fdea0e236c">
+        <dex dex="/home/kb/AndroidStudioProjects/JasanJao/app/build/intermediates/pre-dexed/debug/com.android.support-appcompat-v7-23.4.0_d911bff7d5593c1354d9a1655dae9221620c998a.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/home/kb/AndroidStudioProjects/JasanJao/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-tasks/10.0.1/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.3"
+        sha1="6addaba208e21c6da776d0ca75b6b23a6ccd5499">
+        <dex dex="/home/kb/AndroidStudioProjects/JasanJao/app/build/intermediates/pre-dexed/debug/com.google.android.gms-play-services-tasks-10.0.1_cd6e68d4291373b5001af10b6bb10954b7bb3188.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/home/kb/AndroidStudioProjects/JasanJao/app/build/intermediates/exploded-aar/com.android.support/animated-vector-drawable/23.4.0/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="23.0.3"
+        sha1="de4db3785756bfb0915a9f59a9b3f2fea7407be4">
+        <dex dex="/home/kb/AndroidStudioProjects/JasanJao/app/build/intermediates/pre-dexed/release/com.android.support-animated-vector-drawable-23.4.0_4d6039b2276f40bf7d1857ec64d39fadc2554e14.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/home/kb/AndroidStudioProjects/JasanJao/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-ads-lite/10.0.1/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="23.0.3"
+        sha1="b955cb3a1ad6f1b6ff728ce1e0cd592c1717b440">
+        <dex dex="/home/kb/AndroidStudioProjects/JasanJao/app/build/intermediates/pre-dexed/release/com.google.android.gms-play-services-ads-lite-10.0.1_f4ec3f57c8871ce177e0f70717dce5a4de3ca12e.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/home/kb/AndroidStudioProjects/JasanJao/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.4.0/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="23.0.3"
+        sha1="548f06de403a9409f00554b3ee12a9fdea0e236c">
+        <dex dex="/home/kb/AndroidStudioProjects/JasanJao/app/build/intermediates/pre-dexed/release/com.android.support-appcompat-v7-23.4.0_d911bff7d5593c1354d9a1655dae9221620c998a.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/home/kb/AndroidStudioProjects/JasanJao/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-ads/10.0.1/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.3"
+        sha1="d0460bf07cc3657e0be518ca01c174493951c6b8">
+        <dex dex="/home/kb/AndroidStudioProjects/JasanJao/app/build/intermediates/pre-dexed/debug/com.google.android.gms-play-services-ads-10.0.1_a836689d51e699d3546478dee4ef1c77719a97fb.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/home/kb/AndroidStudioProjects/JasanJao/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-basement/10.0.1/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="23.0.3"
+        sha1="756f6297eef79784f5e356dcd4f39865028b2bd0">
+        <dex dex="/home/kb/AndroidStudioProjects/JasanJao/app/build/intermediates/pre-dexed/release/com.google.android.gms-play-services-basement-10.0.1_60aba188bd3636fc899a7043f618c015dcfa16d7.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/home/kb/AndroidStudioProjects/JasanJao/app/build/intermediates/exploded-aar/com.android.support/recyclerview-v7/23.4.0/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.3"
+        sha1="ec75036c3c52e451d0cde50a5aedaf5fd32354a0">
+        <dex dex="/home/kb/AndroidStudioProjects/JasanJao/app/build/intermediates/pre-dexed/debug/com.android.support-recyclerview-v7-23.4.0_f38131c7c35d6327cd305cb34427d10c1790b52f.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/home/kb/AndroidStudioProjects/JasanJao/app/build/intermediates/exploded-aar/com.android.support/recyclerview-v7/23.4.0/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="23.0.3"
+        sha1="ec75036c3c52e451d0cde50a5aedaf5fd32354a0">
+        <dex dex="/home/kb/AndroidStudioProjects/JasanJao/app/build/intermediates/pre-dexed/release/com.android.support-recyclerview-v7-23.4.0_f38131c7c35d6327cd305cb34427d10c1790b52f.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/home/kb/AndroidStudioProjects/JasanJao/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-ads/10.0.1/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="23.0.3"
+        sha1="d0460bf07cc3657e0be518ca01c174493951c6b8">
+        <dex dex="/home/kb/AndroidStudioProjects/JasanJao/app/build/intermediates/pre-dexed/release/com.google.android.gms-play-services-ads-10.0.1_a836689d51e699d3546478dee4ef1c77719a97fb.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/home/kb/AndroidStudioProjects/JasanJao/app/build/intermediates/exploded-aar/com.android.support/support-v4/24.0.0/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="23.0.3"
+        sha1="2f7e6e2dad1bccaf68a8820820adc6c0d5b96d37">
+        <dex dex="/home/kb/AndroidStudioProjects/JasanJao/app/build/intermediates/pre-dexed/release/com.android.support-support-v4-24.0.0_22feee40c85a9232796d27b59ab4b80b4afdc5e8.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/home/kb/AndroidStudioProjects/JasanJao/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-basement/10.0.1/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.3"
+        sha1="756f6297eef79784f5e356dcd4f39865028b2bd0">
+        <dex dex="/home/kb/AndroidStudioProjects/JasanJao/app/build/intermediates/pre-dexed/debug/com.google.android.gms-play-services-basement-10.0.1_60aba188bd3636fc899a7043f618c015dcfa16d7.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/home/kb/AndroidStudioProjects/JasanJao/app/build/intermediates/exploded-aar/com.android.support/support-v4/24.0.0/jars/libs/internal_impl-24.0.0.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.3"
+        sha1="fcaf463e10e69c1923ccf1edeba3b4196d239e00">
+        <dex dex="/home/kb/AndroidStudioProjects/JasanJao/app/build/intermediates/pre-dexed/debug/internal_impl-24.0.0_b97ec4c492249dc6a4de9a4347133af5c7dc7f0d.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/home/kb/AndroidStudioProjects/JasanJao/app/build/intermediates/exploded-aar/com.android.support/animated-vector-drawable/23.4.0/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.3"
+        sha1="de4db3785756bfb0915a9f59a9b3f2fea7407be4">
+        <dex dex="/home/kb/AndroidStudioProjects/JasanJao/app/build/intermediates/pre-dexed/debug/com.android.support-animated-vector-drawable-23.4.0_4d6039b2276f40bf7d1857ec64d39fadc2554e14.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/home/kb/Android/Sdk/extras/android/m2repository/com/android/support/support-annotations/24.0.0/support-annotations-24.0.0.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.3"
+        sha1="2943c74db6d4346ab8c6531adac91fa05c137c40">
+        <dex dex="/home/kb/AndroidStudioProjects/JasanJao/app/build/intermediates/pre-dexed/debug/support-annotations-24.0.0_849a97027653cf2083d9debd0e4004487778a1ec.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/home/kb/AndroidStudioProjects/JasanJao/app/build/intermediates/exploded-aar/com.android.support/support-v4/24.0.0/jars/libs/internal_impl-24.0.0.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="23.0.3"
+        sha1="fcaf463e10e69c1923ccf1edeba3b4196d239e00">
+        <dex dex="/home/kb/AndroidStudioProjects/JasanJao/app/build/intermediates/pre-dexed/release/internal_impl-24.0.0_b97ec4c492249dc6a4de9a4347133af5c7dc7f0d.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/home/kb/AndroidStudioProjects/JasanJao/app/build/intermediates/exploded-aar/com.google.firebase/firebase-common/10.0.1/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.3"
+        sha1="eb0d830e3eabb9deb9ec44869cf7ac7ea1ad794c">
+        <dex dex="/home/kb/AndroidStudioProjects/JasanJao/app/build/intermediates/pre-dexed/debug/com.google.firebase-firebase-common-10.0.1_3f57f1b3b640655185865f8845595e5ced868e81.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/home/kb/.gradle/caches/modules-2/files-2.1/joda-time/joda-time/2.9.4/1c295b462f16702ebe720bbb08f62e1ba80da41b/joda-time-2.9.4.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.3"
+        sha1="1c295b462f16702ebe720bbb08f62e1ba80da41b">
+        <dex dex="/home/kb/AndroidStudioProjects/JasanJao/app/build/intermediates/pre-dexed/debug/joda-time-2.9.4_dfdaca7b8c63414d7aed1a35b64277c2844ebf7a.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/home/kb/AndroidStudioProjects/JasanJao/app/build/intermediates/incremental-classes/debug/instant-run-bootstrap.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.3"
+        sha1="656f086a4f86d94f68c172f80a34ddf493c9b7e3">
+        <dex dex="/home/kb/AndroidStudioProjects/JasanJao/app/build/intermediates/pre-dexed/debug/instant-run-bootstrap_8283f69a90b90c7680b7a2123bf59774e55f011c.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/home/kb/AndroidStudioProjects/JasanJao/app/build/intermediates/exploded-aar/com.android.support/support-vector-drawable/23.4.0/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="23.0.3"
+        sha1="c2c594cace5d83a3227b2b6e658ecbfd586d3ed9">
+        <dex dex="/home/kb/AndroidStudioProjects/JasanJao/app/build/intermediates/pre-dexed/release/com.android.support-support-vector-drawable-23.4.0_f582ddcbf52cb4898803749d44e8775bff2313a7.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/home/kb/AndroidStudioProjects/JasanJao/app/build/intermediates/exploded-aar/com.google.firebase/firebase-analytics-impl/10.0.1/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.3"
+        sha1="6116e0e7069de7fc259aac8e08b84f32c2038231">
+        <dex dex="/home/kb/AndroidStudioProjects/JasanJao/app/build/intermediates/pre-dexed/debug/com.google.firebase-firebase-analytics-impl-10.0.1_151a71f993208e78b81ced6d6a9d7d04343158ac.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/home/kb/.gradle/caches/modules-2/files-2.1/joda-time/joda-time/2.9.4/1c295b462f16702ebe720bbb08f62e1ba80da41b/joda-time-2.9.4.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="23.0.3"
+        sha1="1c295b462f16702ebe720bbb08f62e1ba80da41b">
+        <dex dex="/home/kb/AndroidStudioProjects/JasanJao/app/build/intermediates/pre-dexed/release/joda-time-2.9.4_dfdaca7b8c63414d7aed1a35b64277c2844ebf7a.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/home/kb/AndroidStudioProjects/JasanJao/app/build/intermediates/exploded-aar/com.android.support/design/23.4.0/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="23.0.3"
+        sha1="5326d9a850d491714fef8cbfaa9ea3416f0bf0d2">
+        <dex dex="/home/kb/AndroidStudioProjects/JasanJao/app/build/intermediates/pre-dexed/release/com.android.support-design-23.4.0_b92b2ae423854036f95c65afbfa8ef9739b5eba6.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/home/kb/Android/Sdk/extras/android/m2repository/com/android/support/support-annotations/24.0.0/support-annotations-24.0.0.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="23.0.3"
+        sha1="2943c74db6d4346ab8c6531adac91fa05c137c40">
+        <dex dex="/home/kb/AndroidStudioProjects/JasanJao/app/build/intermediates/pre-dexed/release/support-annotations-24.0.0_849a97027653cf2083d9debd0e4004487778a1ec.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/home/kb/AndroidStudioProjects/JasanJao/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-clearcut/10.0.1/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.3"
+        sha1="1d193729baf37df3d902a423291423a0df7e3779">
+        <dex dex="/home/kb/AndroidStudioProjects/JasanJao/app/build/intermediates/pre-dexed/debug/com.google.android.gms-play-services-clearcut-10.0.1_a8c63a9946ddba9b20a992335ec3888b95486b9e.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/home/kb/AndroidStudioProjects/JasanJao/app/build/intermediates/exploded-aar/com.google.firebase/firebase-analytics-impl/10.0.1/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="23.0.3"
+        sha1="6116e0e7069de7fc259aac8e08b84f32c2038231">
+        <dex dex="/home/kb/AndroidStudioProjects/JasanJao/app/build/intermediates/pre-dexed/release/com.google.firebase-firebase-analytics-impl-10.0.1_151a71f993208e78b81ced6d6a9d7d04343158ac.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/home/kb/AndroidStudioProjects/JasanJao/app/build/intermediates/exploded-aar/com.android.support/support-v4/24.0.0/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.3"
+        sha1="2f7e6e2dad1bccaf68a8820820adc6c0d5b96d37">
+        <dex dex="/home/kb/AndroidStudioProjects/JasanJao/app/build/intermediates/pre-dexed/debug/com.android.support-support-v4-24.0.0_22feee40c85a9232796d27b59ab4b80b4afdc5e8.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/home/kb/AndroidStudioProjects/JasanJao/app/build/intermediates/exploded-aar/com.android.support/support-vector-drawable/23.4.0/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.3"
+        sha1="c2c594cace5d83a3227b2b6e658ecbfd586d3ed9">
+        <dex dex="/home/kb/AndroidStudioProjects/JasanJao/app/build/intermediates/pre-dexed/debug/com.android.support-support-vector-drawable-23.4.0_f582ddcbf52cb4898803749d44e8775bff2313a7.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/home/kb/AndroidStudioProjects/JasanJao/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-base/10.0.1/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.3"
+        sha1="25438f55fc6d906a0e72f30b21487541430ede43">
+        <dex dex="/home/kb/AndroidStudioProjects/JasanJao/app/build/intermediates/pre-dexed/debug/com.google.android.gms-play-services-base-10.0.1_91588a896faf0c2269f82976812d24e4727b5c1c.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/home/kb/AndroidStudioProjects/JasanJao/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-clearcut/10.0.1/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="23.0.3"
+        sha1="1d193729baf37df3d902a423291423a0df7e3779">
+        <dex dex="/home/kb/AndroidStudioProjects/JasanJao/app/build/intermediates/pre-dexed/release/com.google.android.gms-play-services-clearcut-10.0.1_a8c63a9946ddba9b20a992335ec3888b95486b9e.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/home/kb/AndroidStudioProjects/JasanJao/app/build/intermediates/exploded-aar/com.android.support/design/23.4.0/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.3"
+        sha1="5326d9a850d491714fef8cbfaa9ea3416f0bf0d2">
+        <dex dex="/home/kb/AndroidStudioProjects/JasanJao/app/build/intermediates/pre-dexed/debug/com.android.support-design-23.4.0_b92b2ae423854036f95c65afbfa8ef9739b5eba6.jar" />
+    </item>
+
+</items>
