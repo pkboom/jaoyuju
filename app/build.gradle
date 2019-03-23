@@ -8,8 +8,8 @@ android {
         applicationId "com.sujichim.jasanjao2"
         minSdkVersion 16
         targetSdkVersion 27
-        versionCode 93
-        versionName "5.3.2"
+        versionCode 94
+        versionName "5.3.3"
     }
 
     buildTypes {
