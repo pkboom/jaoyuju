@@ -33,7 +33,7 @@ public class MyReceiver extends BroadcastReceiver{
             Uri soundUri = RingtoneManager.getDefaultUri(RingtoneManager.TYPE_NOTIFICATION);
 
             Intent notiIntent = new Intent(context, MainActivity.class);
-            PendingIntent pIntent = PendingIntent.getActivity(context, 0, notiIntent, PendingIntent.FLAG_CANCEL_CURRENT);
+            PendingIntent pIntent = PendingIntent.getActivity(context, 0, notiIntent, PendingIntent.FLAG_CANCEL_CURRENT | PendingIntent.FLAG_IMMUTABLE);
 
             // Build notification
             // Actions are just fake

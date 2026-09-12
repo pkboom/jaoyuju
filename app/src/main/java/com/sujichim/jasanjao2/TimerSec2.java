@@ -9,8 +9,9 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.IntentFilter;
 import android.os.Bundle;
-import android.support.v7.app.ActionBar;
-import android.support.v7.app.AppCompatActivity;
+import androidx.appcompat.app.ActionBar;
+import androidx.core.content.ContextCompat;
+import androidx.appcompat.app.AppCompatActivity;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -109,29 +110,23 @@ public class TimerSec2 extends AppCompatActivity implements OnClickListener {
 
     @Override
     public void onClick(View v) {
-        switch (v.getId()) {
-            case R.id.button_timeron1:
-                Button btn = (Button) findViewById(R.id.button_timeron1);
-                if (btn.getText() == "반복\n타이머시작") {
-                    Log.i(TAG, "반복타이머시작");
-                    startTimer();
-                } else {
-                    stopTimerTask();
-                }
-                break;
-
-            case R.id.button_timeron2:
-                Button btn2 = (Button) findViewById(R.id.button_timeron2);
-                if (btn2.getText() == "타이머시작") {
-                    startTimer2();
-                    Log.i(TAG2, "타이머시작");
-                } else {
-                    stopTimerTask2();
-                }
-                break;
-
-            default:
-                break;
+        int __viewId = v.getId();
+        if (__viewId == R.id.button_timeron1) {
+            Button btn = (Button) findViewById(R.id.button_timeron1);
+            if (btn.getText() == "반복\n타이머시작") {
+                Log.i(TAG, "반복타이머시작");
+                startTimer();
+            } else {
+                stopTimerTask();
+            }
+        } else if (__viewId == R.id.button_timeron2) {
+            Button btn2 = (Button) findViewById(R.id.button_timeron2);
+            if (btn2.getText() == "타이머시작") {
+                startTimer2();
+                Log.i(TAG2, "타이머시작");
+            } else {
+                stopTimerTask2();
+            }
         }
     }
 
@@ -143,7 +138,7 @@ public class TimerSec2 extends AppCompatActivity implements OnClickListener {
         Intent intent = new Intent(this, BroadcastService.class);
         intent.putExtra("timer", (sec + 1) * 10);
         PendingIntent pIntent = PendingIntent.getService(this, 0, intent,
-                PendingIntent.FLAG_CANCEL_CURRENT);
+                PendingIntent.FLAG_CANCEL_CURRENT | PendingIntent.FLAG_IMMUTABLE);
 
         AlarmManager alarmManager = (AlarmManager) getSystemService(ALARM_SERVICE);
         alarmManager.setRepeating(AlarmManager.RTC_WAKEUP,
@@ -163,7 +158,7 @@ public class TimerSec2 extends AppCompatActivity implements OnClickListener {
         AlarmManager alarmManager = (AlarmManager) getSystemService(Context.ALARM_SERVICE);
         Intent intent = new Intent(this, BroadcastService.class);
         PendingIntent pIntent = PendingIntent.getService(this, 0, intent,
-                PendingIntent.FLAG_CANCEL_CURRENT);
+                PendingIntent.FLAG_CANCEL_CURRENT | PendingIntent.FLAG_IMMUTABLE);
         alarmManager.cancel(pIntent);
         stopService(intent);
 
@@ -190,7 +185,7 @@ public class TimerSec2 extends AppCompatActivity implements OnClickListener {
         Intent intent = new Intent(this, BroadcastService2.class);
         intent.putExtra("timer", (min + 1));
         PendingIntent pIntent = PendingIntent.getService(this, 0, intent,
-                PendingIntent.FLAG_CANCEL_CURRENT);
+                PendingIntent.FLAG_CANCEL_CURRENT | PendingIntent.FLAG_IMMUTABLE);
 
         AlarmManager alarmManager = (AlarmManager) getSystemService(ALARM_SERVICE);
         alarmManager.setRepeating(AlarmManager.RTC_WAKEUP,
@@ -211,7 +206,7 @@ public class TimerSec2 extends AppCompatActivity implements OnClickListener {
         AlarmManager alarmManager = (AlarmManager) getSystemService(Context.ALARM_SERVICE);
         Intent intent = new Intent(this, BroadcastService2.class);
         PendingIntent service = PendingIntent.getService(this, 0, intent,
-                PendingIntent.FLAG_CANCEL_CURRENT);
+                PendingIntent.FLAG_CANCEL_CURRENT | PendingIntent.FLAG_IMMUTABLE);
         PendingIntent pIntent = service;
         alarmManager.cancel(pIntent);
         stopService(intent);
@@ -247,29 +242,43 @@ public class TimerSec2 extends AppCompatActivity implements OnClickListener {
         }
     };
 
+    private boolean receiversRegistered = false;
+
     @Override
     public void onResume() {
         super.onResume();
-        registerReceiver(br, new IntentFilter(BroadcastService.COUNTDOWN_BR));
-        registerReceiver(br2, new IntentFilter(BroadcastService2.COUNTDOWN_BR));
+        // API 34 requires every non-system receiver to declare its export state.
+        // These carry the app's own countdown broadcasts, so they stay private.
+        ContextCompat.registerReceiver(this, br,
+                new IntentFilter(BroadcastService.COUNTDOWN_BR),
+                ContextCompat.RECEIVER_NOT_EXPORTED);
+        ContextCompat.registerReceiver(this, br2,
+                new IntentFilter(BroadcastService2.COUNTDOWN_BR),
+                ContextCompat.RECEIVER_NOT_EXPORTED);
+        receiversRegistered = true;
         Log.i(TAG, "Registered broadcast receiver");
     }
 
     @Override
     public void onPause() {
         super.onPause();
-//        unregisterReceiver(br);
-        Log.i(TAG, "Unregistered broadcast receiver");
+        unregisterReceivers();
     }
 
     @Override
     public void onStop() {
-        try {
-//            unregisterReceiver(br);
-        } catch (Exception e) {
-            // Receiver was probably already stopped in onPause()
-        }
+        unregisterReceivers();
         super.onStop();
+    }
+
+    private void unregisterReceivers() {
+        if (!receiversRegistered) {
+            return;
+        }
+        receiversRegistered = false;
+        unregisterReceiver(br);
+        unregisterReceiver(br2);
+        Log.i(TAG, "Unregistered broadcast receiver");
     }
 
     @Override

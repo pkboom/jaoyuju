@@ -2,12 +2,12 @@ package com.sujichim.jasanjao2;
 
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
-import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentActivity;
-import android.support.v4.app.FragmentManager;
-import android.support.v4.app.FragmentPagerAdapter;
-import android.support.v4.content.ContextCompat;
-import android.support.v4.view.ViewPager;
+import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentActivity;
+import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentPagerAdapter;
+import androidx.core.content.ContextCompat;
+import androidx.viewpager.widget.ViewPager;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -26,11 +26,11 @@ import java.util.Locale;
 public class Hands2 extends FragmentActivity {
 
 	/**
-	 * The {@link android.support.v4.view.PagerAdapter} that will provide
+	 * The {@link androidx.viewpager.widget.PagerAdapter} that will provide
 	 * fragments for each of the sections. We use a {@link FragmentPagerAdapter}
 	 * derivative, which will keep every loaded fragment in memory. If this
 	 * becomes too memory intensive, it may be best to switch to a
-	 * {@link android.support.v4.app.FragmentStatePagerAdapter}.
+	 * {@link androidx.fragment.app.FragmentStatePagerAdapter}.
 	 */
 	SectionsPagerAdapter mSectionsPagerAdapter;
 
@@ -44,12 +44,12 @@ public class Hands2 extends FragmentActivity {
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		
+
 		//no title, no bar
 		requestWindowFeature(Window.FEATURE_NO_TITLE);
 		getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,
 				WindowManager.LayoutParams.FLAG_FULLSCREEN);
-				
+
 		setContentView(R.layout.activity_hands2);
 
 		// Create the adapter that will return a fragment for each of the three
@@ -61,7 +61,7 @@ public class Hands2 extends FragmentActivity {
 		mViewPager = (ViewPager) findViewById(R.id.pagerhands2);
 		mViewPager.setAdapter(mSectionsPagerAdapter);
 
-        MobileAds.initialize(getApplicationContext(), Globals.getMobileAdApi());
+        MobileAds.initialize(getApplicationContext());
 
 		mAdView = (AdView) findViewById(R.id.adView);
 		AdRequest adRequest = new AdRequest.Builder().build();
@@ -160,9 +160,9 @@ public class Hands2 extends FragmentActivity {
 			PhotoView photoView = rootView.findViewById(R.id.hands2);
 
 		    mPageNumber = getArguments().getInt("page");
-		    
+
 		    Drawable bitmap;
-			
+
 		    switch(mPageNumber) {
 		    case 1:
 				bitmap = ContextCompat.getDrawable(getActivity(), R.drawable.palm1200);

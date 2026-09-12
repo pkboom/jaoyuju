@@ -3,7 +3,7 @@ package com.sujichim.jasanjao2;
 import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
+import androidx.appcompat.app.AppCompatActivity;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -61,7 +61,7 @@ public class Ochi extends AppCompatActivity implements View.OnClickListener {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_ochi);
 
-        MobileAds.initialize(getApplicationContext(), Globals.getMobileAdApi());
+        MobileAds.initialize(getApplicationContext());
 
         mAdView = (com.google.android.gms.ads.AdView) findViewById(R.id.adView);
         AdRequest adRequest = new AdRequest.Builder().build();
@@ -114,13 +114,9 @@ public class Ochi extends AppCompatActivity implements View.OnClickListener {
     }
 
     public void onClick(View v) {
-        switch (v.getId()) {
-            case R.id.button_Ochi:
-                ochi_exception();
-                break;
-
-            default:
-                break;
+        int __viewId = v.getId();
+        if (__viewId == R.id.button_Ochi) {
+            ochi_exception();
         }
     }
 

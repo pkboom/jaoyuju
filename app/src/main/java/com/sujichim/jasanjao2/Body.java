@@ -1,7 +1,7 @@
 package com.sujichim.jasanjao2;
 
 import android.content.Intent;
-import android.support.v7.app.AppCompatActivity;
+import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -20,7 +20,7 @@ public class Body extends AppCompatActivity implements View.OnClickListener {
         setContentView(R.layout.activity_body);
 
 //        MobileAds.initialize(getApplicationContext(), "ca-app-pub-1253642133922353~8199002621");
-        MobileAds.initialize(getApplicationContext(), Globals.getMobileAdApi());
+        MobileAds.initialize(getApplicationContext());
 
         mAdView = (AdView) findViewById(R.id.adView);
         AdRequest adRequest = new AdRequest.Builder().build();
@@ -76,93 +76,63 @@ public class Body extends AppCompatActivity implements View.OnClickListener {
     @Override
     public void onClick(View v) {
         Intent intent = new Intent(getBaseContext(), BodyPic.class);
-        switch (v.getId()) {
-            case R.id.buttonA:
-                intent.putExtra("PAGE1", R.drawable.a1);
-                intent.putExtra("PAGE2", R.drawable.a2);
-                startActivity(intent);
-                break;
-
-            case R.id.buttonB:
-                intent.putExtra("PAGE1", R.drawable.b1);
-                intent.putExtra("PAGE2", R.drawable.b2);
-                startActivity(intent);
-                break;
-
-            case R.id.buttonC:
-                intent.putExtra("PAGE1", R.drawable.c1);
-                intent.putExtra("PAGE2", R.drawable.c2);
-                startActivity(intent);
-                break;
-
-            case R.id.buttonD:
-                intent.putExtra("PAGE1", R.drawable.d1);
-                intent.putExtra("PAGE2", R.drawable.d2);
-                startActivity(intent);
-                break;
-
-            case R.id.buttonE:
-                intent.putExtra("PAGE1", R.drawable.e1);
-                intent.putExtra("PAGE2", R.drawable.e2);
-                startActivity(intent);
-                break;
-
-            case R.id.buttonF:
-                intent.putExtra("PAGE1", R.drawable.f1);
-                intent.putExtra("PAGE2", R.drawable.f2);
-                startActivity(intent);
-                break;
-
-            case R.id.buttonG:
-                intent.putExtra("PAGE1", R.drawable.g1);
-                intent.putExtra("PAGE2", R.drawable.g2);
-                startActivity(intent);
-                break;
-
-            case R.id.buttonH:
-                intent.putExtra("PAGE1", R.drawable.h1);
-                intent.putExtra("PAGE2", R.drawable.h2);
-                startActivity(intent);
-                break;
-
-            case R.id.buttonI:
-                intent.putExtra("PAGE1", R.drawable.i1);
-                intent.putExtra("PAGE2", R.drawable.i2);
-                startActivity(intent);
-                break;
-
-            case R.id.buttonJ:
-                intent.putExtra("PAGE1", R.drawable.j1);
-                intent.putExtra("PAGE2", R.drawable.j2);
-                startActivity(intent);
-                break;
-
-            case R.id.buttonK:
-                intent.putExtra("PAGE1", R.drawable.k1);
-                intent.putExtra("PAGE2", R.drawable.k2);
-                startActivity(intent);
-                break;
-
-            case R.id.buttonL:
-                intent.putExtra("PAGE1", R.drawable.l1);
-                intent.putExtra("PAGE2", R.drawable.l2);
-                startActivity(intent);
-                break;
-
-            case R.id.buttonM:
-                intent.putExtra("PAGE1", R.drawable.m1);
-                intent.putExtra("PAGE2", R.drawable.m2);
-                startActivity(intent);
-                break;
-
-            case R.id.buttonN:
-                intent.putExtra("PAGE1", R.drawable.n1);
-                intent.putExtra("PAGE2", R.drawable.n2);
-                startActivity(intent);
-                break;
-
-            default:
-                break;
+        int __viewId = v.getId();
+        if (__viewId == R.id.buttonA) {
+            intent.putExtra("PAGE1", R.drawable.a1);
+            intent.putExtra("PAGE2", R.drawable.a2);
+            startActivity(intent);
+        } else if (__viewId == R.id.buttonB) {
+            intent.putExtra("PAGE1", R.drawable.b1);
+            intent.putExtra("PAGE2", R.drawable.b2);
+            startActivity(intent);
+        } else if (__viewId == R.id.buttonC) {
+            intent.putExtra("PAGE1", R.drawable.c1);
+            intent.putExtra("PAGE2", R.drawable.c2);
+            startActivity(intent);
+        } else if (__viewId == R.id.buttonD) {
+            intent.putExtra("PAGE1", R.drawable.d1);
+            intent.putExtra("PAGE2", R.drawable.d2);
+            startActivity(intent);
+        } else if (__viewId == R.id.buttonE) {
+            intent.putExtra("PAGE1", R.drawable.e1);
+            intent.putExtra("PAGE2", R.drawable.e2);
+            startActivity(intent);
+        } else if (__viewId == R.id.buttonF) {
+            intent.putExtra("PAGE1", R.drawable.f1);
+            intent.putExtra("PAGE2", R.drawable.f2);
+            startActivity(intent);
+        } else if (__viewId == R.id.buttonG) {
+            intent.putExtra("PAGE1", R.drawable.g1);
+            intent.putExtra("PAGE2", R.drawable.g2);
+            startActivity(intent);
+        } else if (__viewId == R.id.buttonH) {
+            intent.putExtra("PAGE1", R.drawable.h1);
+            intent.putExtra("PAGE2", R.drawable.h2);
+            startActivity(intent);
+        } else if (__viewId == R.id.buttonI) {
+            intent.putExtra("PAGE1", R.drawable.i1);
+            intent.putExtra("PAGE2", R.drawable.i2);
+            startActivity(intent);
+        } else if (__viewId == R.id.buttonJ) {
+            intent.putExtra("PAGE1", R.drawable.j1);
+            intent.putExtra("PAGE2", R.drawable.j2);
+            startActivity(intent);
+        } else if (__viewId == R.id.buttonK) {
+            intent.putExtra("PAGE1", R.drawable.k1);
+            intent.putExtra("PAGE2", R.drawable.k2);
+            startActivity(intent);
+        } else if (__viewId == R.id.buttonL) {
+            intent.putExtra("PAGE1", R.drawable.l1);
+            intent.putExtra("PAGE2", R.drawable.l2);
+            startActivity(intent);
+        } else if (__viewId == R.id.buttonM) {
+            intent.putExtra("PAGE1", R.drawable.m1);
+            intent.putExtra("PAGE2", R.drawable.m2);
+            startActivity(intent);
+        } else if (__viewId == R.id.buttonN) {
+            intent.putExtra("PAGE1", R.drawable.n1);
+            intent.putExtra("PAGE2", R.drawable.n2);
+            startActivity(intent);
         }
     }
 

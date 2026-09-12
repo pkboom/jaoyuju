@@ -6,7 +6,7 @@
     android:background="@color/black"
     tools:context=".MainActivity" >
 
-    <android.support.v4.view.ViewPager
+    <androidx.viewpager.widget.ViewPager
         xmlns:android="http://schemas.android.com/apk/res/android"
         xmlns:tools="http://schemas.android.com/tools"
         android:id="@+id/pagerhands2"

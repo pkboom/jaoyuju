@@ -3,7 +3,7 @@ package com.sujichim.jasanjao2.quiz;
 import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
-import android.support.v7.app.AppCompatActivity;
+import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -42,7 +42,7 @@ public class MainQuiz extends AppCompatActivity implements View.OnClickListener 
         btn = (Button) findViewById(R.id.button_gimac);
         btn.setOnClickListener(this);
 
-        MobileAds.initialize(getApplicationContext(), Globals.getMobileAdApi());
+        MobileAds.initialize(getApplicationContext());
 
         mAdView = (AdView) findViewById(R.id.adView);
         AdRequest adRequest = new AdRequest.Builder().build();
@@ -52,29 +52,17 @@ public class MainQuiz extends AppCompatActivity implements View.OnClickListener 
 
     @Override
     public void onClick(View v) {
-        switch (v.getId()) {
-            case R.id.button_ungi:
-                startActivity(new Intent(this, UngiQuiz.class));
-                break;
-
-            case R.id.button_sanghap:
-                startActivity(new Intent(this, SanghapQuiz.class));
-                break;
-
-            case R.id.button_bokjin:
-                startActivity(new Intent(this, BokjinQuiz2.class));
-                break;
-
-            case R.id.button_macjin:
-                startActivity(new Intent(this, MacJin.class));
-                break;
-
-            case R.id.button_gimac:
-                startActivity(new Intent(this, GiMac.class));
-                break;
-
-            default:
-                break;
+        int __viewId = v.getId();
+        if (__viewId == R.id.button_ungi) {
+            startActivity(new Intent(this, UngiQuiz.class));
+        } else if (__viewId == R.id.button_sanghap) {
+            startActivity(new Intent(this, SanghapQuiz.class));
+        } else if (__viewId == R.id.button_bokjin) {
+            startActivity(new Intent(this, BokjinQuiz2.class));
+        } else if (__viewId == R.id.button_macjin) {
+            startActivity(new Intent(this, MacJin.class));
+        } else if (__viewId == R.id.button_gimac) {
+            startActivity(new Intent(this, GiMac.class));
         }
     }
 

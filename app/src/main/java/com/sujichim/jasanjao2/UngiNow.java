@@ -4,7 +4,7 @@ import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
+import androidx.appcompat.app.AppCompatActivity;
 import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
@@ -24,7 +24,7 @@ public class UngiNow extends AppCompatActivity implements View.OnClickListener {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_ungi_now);
 
-        MobileAds.initialize(getApplicationContext(), Globals.getMobileAdApi());
+        MobileAds.initialize(getApplicationContext());
 
         mAdView = (AdView) findViewById(R.id.adView);
         AdRequest adRequest = new AdRequest.Builder().build();
@@ -100,39 +100,24 @@ public class UngiNow extends AppCompatActivity implements View.OnClickListener {
 
     @Override
     public void onClick(View v) {
-        switch (v.getId()) {
-            case R.id.button_top:
-                startActivity(new Intent(this, UngiYear.class));
-                break;
-
-            case R.id.button11:
-            case R.id.button21:
-            case R.id.button31:
-            case R.id.button41:
-            case R.id.button51:
-            case R.id.button12:
-            case R.id.button22:
-            case R.id.button32:
-            case R.id.button42:
-            case R.id.button52:
+        int __viewId = v.getId();
+        if (__viewId == R.id.button_top) {
+            startActivity(new Intent(this, UngiYear.class));
+        } else if (__viewId == R.id.button11 || __viewId == R.id.button21 || __viewId == R.id.button31 || __viewId == R.id.button41 || __viewId == R.id.button51 || __viewId == R.id.button12 || __viewId == R.id.button22 || __viewId == R.id.button32 || __viewId == R.id.button42 || __viewId == R.id.button52) {
 //                AlertDialog.Builder alert = new AlertDialog.Builder(UngiNow.this);
-                AlertDialog.Builder alert = new AlertDialog.Builder(UngiNow.this);
-                alert.setPositiveButton("확인",
-                        new DialogInterface.OnClickListener() {
-                            @Override
-                            public void onClick(DialogInterface dialog,
-                                                int which) {
-                                dialog.dismiss(); // 닫기
-                            }
-                        });
-                String temp = "\uD83D\uDE0A: 해당 장부가 건강해지고 질병 회복도 빠릅니다.\n" +
-                        "\uD83D\uDE1F: 해당 장부가 악화되기 쉽습니다. 관리가 필요합니다.";
-                alert.setMessage(temp);
-                alert.show();
-                break;
-
-            default:
-                break;
+            AlertDialog.Builder alert = new AlertDialog.Builder(UngiNow.this);
+            alert.setPositiveButton("확인",
+                    new DialogInterface.OnClickListener() {
+                        @Override
+                        public void onClick(DialogInterface dialog,
+                                            int which) {
+                            dialog.dismiss(); // 닫기
+                        }
+                    });
+            String temp = "\uD83D\uDE0A: 해당 장부가 건강해지고 질병 회복도 빠릅니다.\n" +
+                    "\uD83D\uDE1F: 해당 장부가 악화되기 쉽습니다. 관리가 필요합니다.";
+            alert.setMessage(temp);
+            alert.show();
         }
     }
 

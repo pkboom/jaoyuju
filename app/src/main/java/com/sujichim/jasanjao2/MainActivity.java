@@ -13,7 +13,7 @@ import android.app.NotificationManager;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
+import androidx.appcompat.app.AppCompatActivity;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -54,7 +54,7 @@ public class MainActivity extends AppCompatActivity implements OnClickListener {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        MobileAds.initialize(getApplicationContext(), Globals.getMobileAdApi());
+        MobileAds.initialize(getApplicationContext());
 
         mAdView = (AdView) findViewById(R.id.adView);
         AdRequest adRequest = new AdRequest.Builder().build();
@@ -106,74 +106,47 @@ public class MainActivity extends AppCompatActivity implements OnClickListener {
 
     @Override
     public void onClick(View v) {
-        switch (v.getId()) {
-            // case R.id.button_alarmon:
-            // setAlarm();
-            // break;
-            //
-            // case R.id.button_alarmoff:
-            // releaseAlarm();
-            // break;
-            case R.id.button_Jao:
+        int __viewId1 = v.getId();
+        if (__viewId1 == R.id.button_Jao) {
 /*
-                AlertDialog.Builder alert = new AlertDialog.Builder(this);
-                alert.setPositiveButton("확인",
-                        new DialogInterface.OnClickListener() {
-                            @Override
-                            public void onClick(DialogInterface dialog,
-                                                int which) {
-                                dialog.dismiss(); // 닫기
-                            }
-                        });
-                alert.setMessage(whatDay(strChun));
-                alert.show();
+            AlertDialog.Builder alert = new AlertDialog.Builder(this);
+            alert.setPositiveButton("확인",
+                    new DialogInterface.OnClickListener() {
+                        @Override
+                        public void onClick(DialogInterface dialog,
+                                            int which) {
+                            dialog.dismiss(); // 닫기
+                        }
+                    });
+            alert.setMessage(whatDay(strChun));
+            alert.show();
 */
-                startActivity(new Intent(this, UngiNow.class));
-                break;
+            startActivity(new Intent(this, UngiNow.class));
+        } else if (__viewId1 == R.id.button_body) {
+            startActivity(new Intent(this, Body.class));
+        } else if (__viewId1 == R.id.button_hands) {
+            startActivity(new Intent(this, Hands2.class));
+        } else if (__viewId1 == R.id.button_threeone) {
+            startActivity(new Intent(this, Threeone2.class));
+        } else if (__viewId1 == R.id.button_Ungi) {
+            // Toast.makeText(getApplicationContext(), "개발중",
+            // Toast.LENGTH_SHORT).show();
+            startActivity(new Intent(this, Ungi.class));
+        } else if (__viewId1 == R.id.button_timer) {
+            startActivity(new Intent(this, TimerSec2.class));
 
-            case R.id.button_body:
-                startActivity(new Intent(this, Body.class));
-                break;
-
-            case R.id.button_hands:
-                startActivity(new Intent(this, Hands2.class));
-                break;
-
-
-            case R.id.button_threeone:
-                startActivity(new Intent(this, Threeone2.class));
-                break;
-
-            case R.id.button_Ungi:
-                // Toast.makeText(getApplicationContext(), "개발중",
-                // Toast.LENGTH_SHORT).show();
-                startActivity(new Intent(this, Ungi.class));
-                break;
-
-            case R.id.button_timer:
-                startActivity(new Intent(this, TimerSec2.class));
-                break;
 
 /*
-            case R.id.button_UngiYear:
-                startActivity(new Intent(this, UngiYear.class));
-                break;
+        case R.id.button_UngiYear:
+            startActivity(new Intent(this, UngiYear.class));
+            break;
 */
-
-            case R.id.button_List:
-                startActivity(new Intent(this, List.class));
-                break;
-
-            case R.id.button_Ochi:
-                startActivity(new Intent(this, Ochi.class));
-                break;
-
-            case R.id.button_Quiz:
-                startActivity(new Intent(this, MainQuiz.class));
-                break;
-
-            default:
-                break;
+        } else if (__viewId1 == R.id.button_List) {
+            startActivity(new Intent(this, List.class));
+        } else if (__viewId1 == R.id.button_Ochi) {
+            startActivity(new Intent(this, Ochi.class));
+        } else if (__viewId1 == R.id.button_Quiz) {
+            startActivity(new Intent(this, MainQuiz.class));
         }
     }
 
@@ -1207,26 +1180,24 @@ public class MainActivity extends AppCompatActivity implements OnClickListener {
             return true;
         }
 
-        switch (id) {
-            case R.id.sendemail:
-                Intent it = new Intent(Intent.ACTION_SEND);
-                String[] mailaddr = {"ppotpo@gmail.com"};
+        int __viewId = id;
+        if (__viewId == R.id.sendemail) {
+            Intent it = new Intent(Intent.ACTION_SEND);
+            String[] mailaddr = {"ppotpo@gmail.com"};
 
-                it.setType("plain/text");
-                it.putExtra(Intent.EXTRA_EMAIL, mailaddr); // 받는사람
-                it.putExtra(Intent.EXTRA_SUBJECT, "건의사항"); // 제목
+            it.setType("plain/text");
+            it.putExtra(Intent.EXTRA_EMAIL, mailaddr); // 받는사람
+            it.putExtra(Intent.EXTRA_SUBJECT, "건의사항"); // 제목
 //                it.putExtra(Intent.EXTRA_TEXT, "건의사항이나 불편한 점이 있으시면 알려주세요.\n"); // 첨부내용
 
-                startActivity(it);
-                return true;
-
-            case R.id.renew:
-                jaoyuju();
-                Toast.makeText(getApplicationContext(), "새로 고침", Toast.LENGTH_SHORT).show();
-                return true;
-
-            default:
-                return super.onOptionsItemSelected(item);
+            startActivity(it);
+            return true;
+        } else if (__viewId == R.id.renew) {
+            jaoyuju();
+            Toast.makeText(getApplicationContext(), "새로 고침", Toast.LENGTH_SHORT).show();
+            return true;
+        } else {
+            return super.onOptionsItemSelected(item);
         }
 //        return super.onOptionsItemSelected(item);
     }

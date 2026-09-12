@@ -4,12 +4,12 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Environment;
-import android.support.design.widget.FloatingActionButton;
-import android.support.v7.app.AlertDialog;
-import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.LinearLayoutManager;
-import android.support.v7.widget.RecyclerView;
-import android.support.v7.widget.Toolbar;
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
+import androidx.appcompat.app.AlertDialog;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
+import androidx.appcompat.widget.Toolbar;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -125,7 +125,7 @@ public class List extends AppCompatActivity {
             }
         }
 
-        MobileAds.initialize(getApplicationContext(), Globals.getMobileAdApi());
+        MobileAds.initialize(getApplicationContext());
 
         mAdView = (AdView) findViewById(R.id.adView);
         AdRequest adRequest = new AdRequest.Builder().build();
@@ -175,44 +175,38 @@ public class List extends AppCompatActivity {
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
 
-        switch (item.getItemId()) {
-            case android.R.id.home:
-            startActivity(new Intent(this, MainActivity.class));
-            break;
-            case R.id.explanation:
-            AlertDialog.Builder builder = new AlertDialog.Builder(this);
-            builder.setTitle("맥진카드 다운로드&업로드 안내")
-                        .setPositiveButton("확인",
-                                new DialogInterface.OnClickListener() {
-                                    @Override
-                                    public void onClick(DialogInterface dialog,
-                                                        int which) {
-                                        dialog.dismiss(); // 닫기
-                                    }
-                                });
-            String instructions = "1. '다운로드' 클릭\n"
-                        + "2. '내파일->Download/medicalrecord.zip' 파일 생성\n"
-                        + "3. 다운로드 완료\n"
-                        + "4. 새 스마트폰의 '내파일->Download'폴더로 'medicalrecord.zip'이동\n"
-                        + "5. 새 스마트폰에 '맥진카드' 설치\n"
-                        + "6. '업로드' 클릭\n"
-                        + "7. 업로드 완료";
-            builder.setMessage(instructions);
-            AlertDialog dialog = builder.create();    // 알림창 객체 생성
-            dialog.show();    // 알림창 띄우기
-
-            break;
-            case R.id.upload:
-                try {
-                    uploadDB();
-                } catch (IOException e) {
-                    e.printStackTrace();
-                }
-                break;
-
-            case R.id.download:
-                exportDB();
-
+        int __viewId = item.getItemId();
+        if (__viewId == android.R.id.home) {
+        startActivity(new Intent(this, MainActivity.class));
+        } else if (__viewId == R.id.explanation) {
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        builder.setTitle("맥진카드 다운로드&업로드 안내")
+                    .setPositiveButton("확인",
+                            new DialogInterface.OnClickListener() {
+                                @Override
+                                public void onClick(DialogInterface dialog,
+                                                    int which) {
+                                    dialog.dismiss(); // 닫기
+                                }
+                            });
+        String instructions = "1. '다운로드' 클릭\n"
+                    + "2. '내파일->Download/medicalrecord.zip' 파일 생성\n"
+                    + "3. 다운로드 완료\n"
+                    + "4. 새 스마트폰의 '내파일->Download'폴더로 'medicalrecord.zip'이동\n"
+                    + "5. 새 스마트폰에 '맥진카드' 설치\n"
+                    + "6. '업로드' 클릭\n"
+                    + "7. 업로드 완료";
+        builder.setMessage(instructions);
+        AlertDialog dialog = builder.create();    // 알림창 객체 생성
+        dialog.show();    // 알림창 띄우기
+        } else if (__viewId == R.id.upload) {
+            try {
+                uploadDB();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        } else if (__viewId == R.id.download) {
+            exportDB();
         }
 
         return super.onOptionsItemSelected(item);

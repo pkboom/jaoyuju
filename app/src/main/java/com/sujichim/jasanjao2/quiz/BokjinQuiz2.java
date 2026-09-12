@@ -2,7 +2,7 @@ package com.sujichim.jasanjao2.quiz;
 
 import android.os.Bundle;
 import android.os.Handler;
-import android.support.v7.app.AppCompatActivity;
+import androidx.appcompat.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
@@ -88,7 +88,7 @@ public class BokjinQuiz2 extends AppCompatActivity implements View.OnClickListen
 
         quizz();
 
-        MobileAds.initialize(getApplicationContext(), Globals.getMobileAdApi());
+        MobileAds.initialize(getApplicationContext());
 
         mAdView = (AdView) findViewById(R.id.adView);
         AdRequest adRequest = new AdRequest.Builder().build();
@@ -249,20 +249,16 @@ public class BokjinQuiz2 extends AppCompatActivity implements View.OnClickListen
 
 
     public void onClick(View v) {
-        switch (v.getId()) {
-            case R.id.button_input:
-                //Button btn = (Button) findViewById(R.id.button_input);
+        int __viewId = v.getId();
+        if (__viewId == R.id.button_input) {
+            //Button btn = (Button) findViewById(R.id.button_input);
 //                Toast.makeText(UngiQuiz.this, btn.getText(), Toast.LENGTH_SHORT).show();
-                //if (btn.getText() == "확 인") {
-                GoNext();
-                //} else {
-                //if go next, 새로 시작
-                //quizz();
-                //}
-                break;
-
-            default:
-                break;
+            //if (btn.getText() == "확 인") {
+            GoNext();
+            //} else {
+            //if go next, 새로 시작
+            //quizz();
+            //}
         }
     }
 

@@ -1,7 +1,7 @@
 package com.sujichim.jasanjao2.quiz;
 
 import android.os.Handler;
-import android.support.v7.app.AppCompatActivity;
+import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.Menu;
@@ -60,7 +60,7 @@ public class MacJin extends AppCompatActivity implements View.OnClickListener {
 
         quizz();
 
-        MobileAds.initialize(getApplicationContext(), Globals.getMobileAdApi());
+        MobileAds.initialize(getApplicationContext());
 
         mAdView = (AdView) findViewById(R.id.adView);
         AdRequest adRequest = new AdRequest.Builder().build();
@@ -167,13 +167,9 @@ public class MacJin extends AppCompatActivity implements View.OnClickListener {
     }
 
     public void onClick(View v) {
-        switch (v.getId()) {
-            case R.id.button_input:
-                GoNext();
-                break;
-
-            default:
-                break;
+        int __viewId = v.getId();
+        if (__viewId == R.id.button_input) {
+            GoNext();
         }
     }
 

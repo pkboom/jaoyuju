@@ -9,7 +9,7 @@ import android.graphics.Bitmap.CompressFormat;
 import android.net.Uri;
 import android.os.Bundle;
 import android.os.Environment;
-import android.support.v7.app.AppCompatActivity;
+import androidx.appcompat.app.AppCompatActivity;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -64,7 +64,7 @@ public class Ungi extends AppCompatActivity implements OnClickListener {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_ungi);
 
-        MobileAds.initialize(getApplicationContext(), Globals.getMobileAdApi());
+        MobileAds.initialize(getApplicationContext());
 
         mAdView = (AdView) findViewById(R.id.adView);
         AdRequest adRequest = new AdRequest.Builder().build();
@@ -137,61 +137,52 @@ public class Ungi extends AppCompatActivity implements OnClickListener {
 
     @Override
     public void onClick(View v) {
-        switch (v.getId()) {
-            case R.id.button_ungi:
-                if (ungi306) {
-                    // 입태 306일은 다른 레이아웃에서 보여줌
-                    // Intent intent = new Intent(Ungi.this, Threeosix.class);
-                    // intent.putExtra("another", threeOSix);
-                    // startActivity(intent);
+        int __viewId = v.getId();
+        if (__viewId == R.id.button_ungi) {
+            if (ungi306) {
+                // 입태 306일은 다른 레이아웃에서 보여줌
+                // Intent intent = new Intent(Ungi.this, Threeosix.class);
+                // intent.putExtra("another", threeOSix);
+                // startActivity(intent);
 
-                    AlertDialog.Builder alert = new AlertDialog.Builder(Ungi.this);
-                    alert.setPositiveButton("확인",
-                            new DialogInterface.OnClickListener() {
-                                @Override
-                                public void onClick(DialogInterface dialog,
-                                                    int which) {
-                                    dialog.dismiss(); // 닫기
-                                }
-                            });
-                    alert.setMessage("입태 306일\n" + threeOSix);
-                    alert.show();
-                }
+                AlertDialog.Builder alert = new AlertDialog.Builder(Ungi.this);
+                alert.setPositiveButton("확인",
+                        new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialog,
+                                                int which) {
+                                dialog.dismiss(); // 닫기
+                            }
+                        });
+                alert.setMessage("입태 306일\n" + threeOSix);
+                alert.show();
+            }
+        } else if (__viewId == R.id.button_plus) {
+            new DatePickerDialog(Ungi.this, AlertDialog.THEME_HOLO_LIGHT, dateSetListener, yearSelect,
+                    monthSelect, daySelect).show();
+            plusMinus = true;
+        } else if (__viewId == R.id.button_minus) {
+            new DatePickerDialog(Ungi.this, AlertDialog.THEME_HOLO_LIGHT, dateSetListener, yearLunar,
+                    monthLunar, dayLunar).show();
+            plusMinus = false;
+            DialogSelectOption();
+        } else if (__viewId == R.id.button_share) {
+            Intent msg = new Intent(Intent.ACTION_SEND);
+            msg.addCategory(Intent.CATEGORY_DEFAULT);
+            msg.putExtra(Intent.EXTRA_TEXT, resultUngi);
+            msg.setType("text/plain");
+            startActivity(Intent.createChooser(msg, "운기체형"));
 
-                break;
-
-            case R.id.button_plus:
-                new DatePickerDialog(Ungi.this, AlertDialog.THEME_HOLO_LIGHT, dateSetListener, yearSelect,
-                        monthSelect, daySelect).show();
-                plusMinus = true;
-                break;
-
-            case R.id.button_minus:
-                new DatePickerDialog(Ungi.this, AlertDialog.THEME_HOLO_LIGHT, dateSetListener, yearLunar,
-                        monthLunar, dayLunar).show();
-                plusMinus = false;
-                DialogSelectOption();
-                break;
-
-            case R.id.button_share:
-                Intent msg = new Intent(Intent.ACTION_SEND);
-                msg.addCategory(Intent.CATEGORY_DEFAULT);
-                msg.putExtra(Intent.EXTRA_TEXT, resultUngi);
-                msg.setType("text/plain");
-                startActivity(Intent.createChooser(msg, "운기체형"));
-                break;
 
 /*
-            case R.id.button_jisu:
-                startActivity(new Intent(this, JangbuJisu.class));
-                break;
+        case R.id.button_jisu:
+            startActivity(new Intent(this, JangbuJisu.class));
+            break;
 */
-
-            case R.id.button_Card:
-                Intent mIntent = new Intent(this, Form.class);
-                mIntent.putExtra("info", resultUngi + "\n");
-                startActivity(mIntent);
-                break;
+        } else if (__viewId == R.id.button_Card) {
+            Intent mIntent = new Intent(this, Form.class);
+            mIntent.putExtra("info", resultUngi + "\n");
+            startActivity(mIntent);
         }
     }
 

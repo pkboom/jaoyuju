@@ -2,7 +2,7 @@ package com.sujichim.jasanjao2;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
+import androidx.appcompat.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
 import android.view.View.OnClickListener;
@@ -20,7 +20,7 @@ public class Threeone2 extends AppCompatActivity implements OnClickListener {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_threeone2);
 
-        MobileAds.initialize(getApplicationContext(), Globals.getMobileAdApi());
+        MobileAds.initialize(getApplicationContext());
 
         mAdView = (AdView) findViewById(R.id.adView);
         AdRequest adRequest = new AdRequest.Builder().build();
@@ -48,27 +48,17 @@ public class Threeone2 extends AppCompatActivity implements OnClickListener {
 
     @Override
     public void onClick(View v) {
-        switch (v.getId()) {
-            case R.id.button_yangil:
-                startActivity(new Intent(this, Yangsil.class));
-                break;
-
-            case R.id.button_sinsil:
-                startActivity(new Intent(this, Sinsil.class));
-                break;
-
-            case R.id.button_eumsil:
-                startActivity(new Intent(this, Eumsil.class));
-                break;
-
-            case R.id.button_bokjindo:
-                startActivity(new Intent(this, Bokjindo.class));
-                break;
-
-            case R.id.button_8:
-                startActivity(new Intent(this, Eightholes.class));
-                break;
-
+        int __viewId = v.getId();
+        if (__viewId == R.id.button_yangil) {
+            startActivity(new Intent(this, Yangsil.class));
+        } else if (__viewId == R.id.button_sinsil) {
+            startActivity(new Intent(this, Sinsil.class));
+        } else if (__viewId == R.id.button_eumsil) {
+            startActivity(new Intent(this, Eumsil.class));
+        } else if (__viewId == R.id.button_bokjindo) {
+            startActivity(new Intent(this, Bokjindo.class));
+        } else if (__viewId == R.id.button_8) {
+            startActivity(new Intent(this, Eightholes.class));
         }
     }
 

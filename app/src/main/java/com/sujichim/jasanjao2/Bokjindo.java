@@ -30,7 +30,7 @@ public class Bokjindo extends Activity {
 		photoView.setImageResource(R.drawable.threeone3);
 
 
-		MobileAds.initialize(getApplicationContext(), Globals.getMobileAdApi());
+		MobileAds.initialize(getApplicationContext());
 
 		mAdView = (AdView) findViewById(R.id.adView);
 		AdRequest adRequest = new AdRequest.Builder().build();

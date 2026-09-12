@@ -1,0 +1,13 @@
+# Signing secrets — never commit
+keystore.properties
+*.jks
+*.keystore
+backup/
+
+# Build output & IDE cruft
+/build/
+/app/build/
+.gradle/
+local.properties
+*.iml
+.idea/

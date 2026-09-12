@@ -1,7 +1,7 @@
 package com.sujichim.jasanjao2;
 
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
+import androidx.appcompat.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
 import android.view.View.OnClickListener;
@@ -135,15 +135,13 @@ public class UngiYear extends AppCompatActivity implements OnClickListener {
 
     @Override
     public void onClick(View v) {
-        switch (v.getId()) {
-            case R.id.button_lastyear:
-                year--;
-                ungiSelectYear();
-                break;
-
-            case R.id.button_nextyear:
-                year++;
-                ungiSelectYear();
+        int __viewId = v.getId();
+        if (__viewId == R.id.button_lastyear) {
+            year--;
+            ungiSelectYear();
+        } else if (__viewId == R.id.button_nextyear) {
+            year++;
+            ungiSelectYear();
         }
     }
 

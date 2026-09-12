@@ -1,0 +1,7 @@
+<resources>
+    <!--
+        Debug builds serve Google's official test banner so development never
+        requests (or clicks) live inventory. Release builds keep the real unit.
+    -->
+    <string name="banner_ad_unit_id">ca-app-pub-3940256099942544/6300978111</string>
+</resources>
