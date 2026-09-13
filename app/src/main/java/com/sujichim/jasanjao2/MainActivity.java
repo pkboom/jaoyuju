@@ -1172,10 +1172,6 @@ public class MainActivity extends AppCompatActivity implements OnClickListener {
 
             startActivity(it);
             return true;
-        } else if (__viewId == R.id.renew) {
-            jaoyuju();
-            Toast.makeText(getApplicationContext(), "새로 고침", Toast.LENGTH_SHORT).show();
-            return true;
         } else {
             return super.onOptionsItemSelected(item);
         }

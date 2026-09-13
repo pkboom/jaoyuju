@@ -15,9 +15,4 @@
         android:title="@string/sendemail"
         android:icon="@drawable/ic_email_white_24dp"
         app:showAsAction="ifRoom"/>
-    <item
-        android:id="@+id/renew"
-        android:title="@string/renew"
-        android:icon="@drawable/ic_refresh_white_24dp"
-        app:showAsAction="ifRoom"/>
 </menu>
