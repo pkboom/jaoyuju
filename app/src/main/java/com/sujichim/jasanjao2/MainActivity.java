@@ -32,6 +32,7 @@ import com.sujichim.jasanjao2.quiz.MainQuiz;
 
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
+import java.util.Locale;
 
 //import net.daum.adam.publisher.AdView;
 //import net.daum.adam.publisher.impl.AdError;
@@ -184,7 +185,7 @@ public class MainActivity extends AppCompatActivity implements OnClickListener {
         // 현재시간 출력
         Calendar cal = Calendar.getInstance();
         Calendar cal2014 = Calendar.getInstance();
-        SimpleDateFormat formatter = new SimpleDateFormat("MM/dd(E) a hh:mm");
+        SimpleDateFormat formatter = new SimpleDateFormat("MM/dd(E) a hh:mm", Locale.US);
         String strToday = formatter.format(cal.getTimeInMillis());
 
         // 한국이 일본보다 24분 느리다
