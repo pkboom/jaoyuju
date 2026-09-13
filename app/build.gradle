@@ -8,7 +8,7 @@ android {
         applicationId "com.sujichim.jasanjao2"
         minSdk 24
         targetSdk 36
-        versionCode 96
+        versionCode 97
         versionName "5.5.0"
 
         manifestPlaceholders = [admobAppId: "ca-app-pub-1253642133922353~8199002621"]
@@ -46,6 +46,10 @@ android {
     lint {
         abortOnError false
     }
+
+    testOptions {
+        unitTests.returnDefaultValues = true
+    }
 }
 
 dependencies {
@@ -59,4 +63,6 @@ dependencies {
     implementation 'com.google.android.gms:play-services-ads:25.4.0'
     implementation 'joda-time:joda-time:2.14.3'
     implementation 'com.github.chrisbanes:PhotoView:2.3.0'
+
+    testImplementation 'junit:junit:4.13.2'
 }

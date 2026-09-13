@@ -3,34 +3,24 @@ package com.sujichim.jasanjao2;
 import android.app.AlertDialog;
 import android.app.DatePickerDialog;
 import android.content.DialogInterface;
-import android.content.Intent;
-import android.graphics.Bitmap;
-import android.graphics.Bitmap.CompressFormat;
-import android.net.Uri;
 import android.os.Bundle;
-import android.os.Environment;
 import androidx.appcompat.app.AppCompatActivity;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.View.OnClickListener;
-import android.widget.Button;
 import android.widget.DatePicker;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.android.gms.ads.AdRequest;
 import com.google.android.gms.ads.AdView;
 import com.google.android.gms.ads.MobileAds;
-import com.sujichim.jasanjao2.card.Form;
 
 import org.joda.time.DateTime;
 import org.joda.time.Days;
 
-import java.io.File;
-import java.io.FileNotFoundException;
-import java.io.FileOutputStream;
-import java.io.IOException;
 import java.io.InputStream;
 import java.util.Calendar;
 
@@ -106,31 +96,12 @@ public class Ungi extends AppCompatActivity implements OnClickListener {
         // 묘나 유날인지 확인
         check306();
 
-        // create buttons
-        Button btn = (Button) findViewById(R.id.button_ungi);
-        btn.setText(resultUngi);
-        btn.setOnClickListener(this);
+        findViewById(R.id.button_ungi).setOnClickListener(this);
+        findViewById(R.id.button_plus).setOnClickListener(this);
+        findViewById(R.id.button_minus).setOnClickListener(this);
 
-        btn = (Button) findViewById(R.id.button_plus);
-        btn.setOnClickListener(this);
-
-        btn = (Button) findViewById(R.id.button_minus);
-        btn.setOnClickListener(this);
-
-/*
-        btn = (Button) findViewById(R.id.button_jisu);
-        btn.setOnClickListener(this);
-*/
-
-        btn = (Button) findViewById(R.id.button_Card);
-        btn.setOnClickListener(this);
-
-
-//        btn = (Button) findViewById(R.id.button_screenshot);
-//        btn.setOnClickListener(this);
-
-        btn = (Button) findViewById(R.id.button_share);
-        btn.setOnClickListener(this);
+        // setOnClickListener 가 clickable 을 켜므로 렌더링을 뒤에 둔다.
+        renderResult();
     }
 
     @Override
@@ -152,7 +123,7 @@ public class Ungi extends AppCompatActivity implements OnClickListener {
                                 dialog.dismiss(); // 닫기
                             }
                         });
-                alert.setMessage("입태 306일\n" + threeOSix);
+                alert.setMessage("입태 306일\n\n" + UngiResult.format306(threeOSix));
                 alert.show();
             }
         } else if (__viewId == R.id.button_plus) {
@@ -164,64 +135,51 @@ public class Ungi extends AppCompatActivity implements OnClickListener {
                     monthLunar, dayLunar).show();
             plusMinus = false;
             DialogSelectOption();
-        } else if (__viewId == R.id.button_share) {
-            Intent msg = new Intent(Intent.ACTION_SEND);
-            msg.addCategory(Intent.CATEGORY_DEFAULT);
-            msg.putExtra(Intent.EXTRA_TEXT, resultUngi);
-            msg.setType("text/plain");
-            startActivity(Intent.createChooser(msg, "운기체형"));
-
-
-/*
-        case R.id.button_jisu:
-            startActivity(new Intent(this, JangbuJisu.class));
-            break;
-*/
-        } else if (__viewId == R.id.button_Card) {
-            Intent mIntent = new Intent(this, Form.class);
-            mIntent.putExtra("info", resultUngi + "\n");
-            startActivity(mIntent);
         }
     }
 
-    public Bitmap takeScreenshot() {
-        View rootView = findViewById(android.R.id.content).getRootView();
-        rootView.setDrawingCacheEnabled(true);
-        Bitmap bitmap = Bitmap.createBitmap(rootView.getDrawingCache());
-        rootView.setDrawingCacheEnabled(false);
-        return bitmap;
-        // rootView.setDrawingCacheEnabled(true);
-        // return rootView.getDrawingCache();
-    }
+    private void renderResult() {
+        UngiResult result = UngiResult.parse(resultUngi);
 
-    //save screenshot to my device
-    public void saveBitmap(Bitmap bitmap) {
-        String mCurrentPhotoPath;
-        int n = (int) (Math.random() * 10000) + 1;
-        mCurrentPhotoPath = Environment.getExternalStorageDirectory()
-                + "/pictures/screenshots/운기" + n + ".jpg";
-        File imagePath = new File(mCurrentPhotoPath);
-        FileOutputStream fos;
-        try {
-            fos = new FileOutputStream(imagePath);
-            bitmap.compress(CompressFormat.JPEG, 100, fos);
-            fos.flush();
-            fos.close();
-        } catch (FileNotFoundException e) {
-            Log.e("GREC", e.getMessage(), e);
-        } catch (IOException e) {
-            Log.e("GREC", e.getMessage(), e);
+        if (!result.parsed()) {
+            // 예상과 다른 형식이면 원본을 그대로 보여준다.
+            setText(R.id.tv_date, "");
+            setText(R.id.tv_left_title, result.raw());
+            setText(R.id.tv_left_organ, "");
+            setText(R.id.tv_left_index, "");
+            setText(R.id.tv_right_title, "");
+            setText(R.id.tv_right_organ, "");
+            setText(R.id.tv_right_index, "");
+            show(R.id.tv_date_lunar, false);
+            show(R.id.tv_marker, false);
+            show(R.id.tv_306_hint, false);
+            findViewById(R.id.button_ungi).setClickable(false);
+            return;
         }
-        galleryAddPic(mCurrentPhotoPath);
+
+        setText(R.id.tv_date, result.date());
+        setText(R.id.tv_date_lunar, result.lunarDate());
+        show(R.id.tv_date_lunar, result.lunarDate().length() > 0);
+        setText(R.id.tv_marker, result.marker());
+        show(R.id.tv_marker, result.marker().length() > 0);
+
+        setText(R.id.tv_left_title, result.left().title());
+        setText(R.id.tv_left_organ, result.left().organ());
+        setText(R.id.tv_left_index, result.left().index());
+        setText(R.id.tv_right_title, result.right().title());
+        setText(R.id.tv_right_organ, result.right().organ());
+        setText(R.id.tv_right_index, result.right().index());
+
+        show(R.id.tv_306_hint, ungi306);
+        findViewById(R.id.button_ungi).setClickable(ungi306);
     }
 
-    //Add the Photo to a Gallery
-    private void galleryAddPic(String str) {
-        Intent mediaScanIntent = new Intent(Intent.ACTION_MEDIA_SCANNER_SCAN_FILE);
-        File f = new File(str);
-        Uri contentUri = Uri.fromFile(f);
-        mediaScanIntent.setData(contentUri);
-        this.sendBroadcast(mediaScanIntent);
+    private void setText(int id, String text) {
+        ((TextView) findViewById(id)).setText(text);
+    }
+
+    private void show(int id, boolean visible) {
+        findViewById(id).setVisibility(visible ? View.VISIBLE : View.GONE);
     }
 
     private void check306() {
@@ -717,6 +675,11 @@ public class Ungi extends AppCompatActivity implements OnClickListener {
         return cal;
     }
 
+    /** SolLun 은 변환할 수 없으면 날짜 대신 "error" 를 돌려준다. */
+    private static boolean isConversionError(String date) {
+        return date == null || date.length() < 8;
+    }
+
     private DatePickerDialog.OnDateSetListener dateSetListener = new DatePickerDialog.OnDateSetListener() {
 
         @Override
@@ -743,6 +706,16 @@ public class Ungi extends AppCompatActivity implements OnClickListener {
                 SolLun solLunInstance = new SolLun();
                 String strDate = solLunInstance.LunToSol(year2, monthOfYear, dayOfMonth, isLeapMonth);
                 Log.i("lunar  ", strDate);
+                if (isConversionError(strDate)) {
+                    // 윤달이 없는 달을 윤달로 고른 경우와 아예 없는 날짜를 구분해서 알려준다.
+                    boolean noLeapMonth = isLeapMonth == 1
+                            && !isConversionError(solLunInstance.LunToSol(year2, monthOfYear, dayOfMonth, 0));
+                    Toast.makeText(Ungi.this,
+                            noLeapMonth ? "윤달이 없는 달입니다" : "존재하지 않는 날짜입니다",
+                            Toast.LENGTH_SHORT).show();
+                    isLeapMonth = 0;
+                    return;
+                }
                 year2 = Integer.parseInt(strDate.substring(0,4));
                 monthOfYear = Integer.parseInt(strDate.substring(4, 6))-1;
                 dayOfMonth = Integer.parseInt(strDate.substring(6, 8));
@@ -773,6 +746,12 @@ public class Ungi extends AppCompatActivity implements OnClickListener {
                 SolLun solLunInstance = new SolLun();
                 String strDate = solLunInstance.SolToLun(year2, monthOfYear, dayOfMonth);
                 Log.i("lunar  ", strDate);
+                if (isConversionError(strDate)) {
+                    Toast.makeText(Ungi.this, "1881년~2050년만 계산할 수 있습니다",
+                            Toast.LENGTH_SHORT).show();
+                    isLeapMonth = 0;
+                    return;
+                }
                 Log.i("strDate.length  ", String.valueOf(strDate.length()));
                 if (strDate.length() > 8) {
                     isLeapMonth = 1;
@@ -828,12 +807,7 @@ public class Ungi extends AppCompatActivity implements OnClickListener {
 
         // 묘나 유날인지 확인
         check306();
-        Button btn = (Button) findViewById(R.id.button_ungi);
-        btn.setText(resultUngi);
-
-        // TextView tV1 = (TextView) findViewById(R.id.textUngi);
-        // tV1.setText(resultUngi);
-
+        renderResult();
     }
 
     private void DialogSelectOption() {
@@ -852,10 +826,8 @@ public class Ungi extends AppCompatActivity implements OnClickListener {
                         // Toast.makeText(getApplicationContext(),
                         // items[index], Toast.LENGTH_SHORT)
                         // .show();
-                        // 윤달이면
-                        if (index == 1) {
-                            isLeapMonth = 1;
-                        }
+                        // 윤달이면 1, 평달이면 0. 되돌리지 않으면 다음 선택까지 윤달로 남는다.
+                        isLeapMonth = (index == 1) ? 1 : 0;
                     }
                 });
 
