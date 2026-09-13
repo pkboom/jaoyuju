@@ -5,12 +5,9 @@ description: Build, sign, install and publish an Android app to Google Play. Cov
 
 Four stages, each runnable on its own: **build → device → upload → production**.
 
-The value here is the failure modes. Several of them are silent — a step reports success and
-produces nothing, or a button stays disabled with no message. Those are marked.
-
 ## Per project
 
-Read these off the repo before starting; every command below substitutes them.
+Read off the repo before starting; every command below substitutes these.
 
 | | |
 | --- | --- |
@@ -27,8 +24,7 @@ Known accounts: `pkboom` (ppotpo@gmail.com), developer id `7021778550024261906`.
 
 ## Build
 
-Goal: a **signed** AAB for Play, and optionally an APK for `adb install`. Play will not take
-an APK; `adb` will not take an AAB.
+Play will not take an APK; `adb` will not take an AAB. The AAB must be **signed**.
 
 ### Gradle projects
 
@@ -37,14 +33,14 @@ an APK; `adb` will not take an AAB.
 ./gradlew assembleRelease   # app/build/outputs/apk/release/app-release.apk
 ```
 
-Signing usually reads a gitignored `keystore.properties` + `*.jks`. **If that file is missing
-the release build still succeeds, unsigned** — the signing config is applied conditionally, so
-there is no warning. Play rejects the upload later.
+Signing reads a gitignored `keystore.properties` + `*.jks`. The config is applied
+conditionally, so **a missing file still builds a release — unsigned, unwarned**. Play rejects
+it at upload.
 
-Check whether the keystore is the *upload* key or the **app signing key itself**. If a locally
-built release installs over the Play build with no signature mismatch, it is the app signing
-key: losing it means the app can never be updated again. An upload key, by contrast, is
-recoverable — Play App Signing holds the real key and Google will reset an upload key.
+Check which key the keystore holds. If a locally built release installs over the Play build
+with no signature mismatch, it is the **app signing key**: lose it and the app can never be
+updated again. An upload key is recoverable — Play App Signing holds the real key and Google
+will reset an upload key.
 
 ### Godot projects
 
@@ -53,9 +49,9 @@ godot --headless --path . --export-release "<preset>" build/out.aab
 ```
 
 Presets live in `export_presets.cfg` (usually gitignored — it holds the keystore path **and
-password**). Keep two presets: AAB for Play, APK for adb. `gradle_build/export_format` is `1`
-for AAB and `0` for APK, and **the output extension must match** or it fails after the whole
-Gradle build has run, reading like a build error.
+password**). Keep two: AAB for Play, APK for adb. `gradle_build/export_format` is `1` for AAB
+and `0` for APK, and **the output extension must match** or it fails after the whole Gradle
+build has run, reading like a build error.
 
 Four things must be true or export refuses, each with a different message: export templates
 matching the engine version *exactly*; `textures/vram_compression/import_etc2_astc=true`; a
@@ -71,9 +67,8 @@ ls -lh "$AAB"
 jarsigner -verify "$AAB" | head -1        # want "jar verified."; unsigned says "jar is unsigned"
 ```
 
-Play rejects a version code not higher than the last **uploaded** one — see the warning under
-Upload, which is stricter than it sounds. Bump it, then verify it landed in the artifact, not
-just in config:
+Play rejects a version code not higher than the last **uploaded** one — stricter than it
+sounds, see Upload. Bump it, then verify it landed in the artifact, not just in config:
 
 ```bash
 aapt2 dump badging "$APK" | head -1       # versionCode / versionName
@@ -85,8 +80,7 @@ unzip -p "$AAB" base/manifest/AndroidManifest.xml | strings | grep -A1 versionNa
 an APK from the same build, or off the bundle manifest as above. `aapt2` lives in
 `$ANDROID_HOME/build-tools/<latest>/`, not on `PATH`.
 
-Also confirm the bundle actually contains what you just added, e.g.
-`unzip -l "$AAB" | grep -c sfx`.
+Confirm the bundle contains what you just added, e.g. `unzip -l "$AAB" | grep -c sfx`.
 
 ---
 
@@ -115,7 +109,7 @@ launcher activity for anything not exported, which looks like a clean launch of 
 screen. `mCurrentFocus` is the cheap navigation assertion: tap, wait ~4s, read it back.
 
 **Check the device is yours to drive.** If the user is holding the phone, taps land in
-whatever app they have open and every reading is meaningless. `mCurrentFocus` before and after
+whatever app they have open and every reading is meaningless; `mCurrentFocus` before and after
 is the check.
 
 A backgrounded emulator throttles: clicks register while rendering stalls for seconds. Bring
@@ -178,8 +172,8 @@ in-app works.
    node = cdp("DOM.querySelector", nodeId=doc["root"]["nodeId"], selector="input[type=file]")
    cdp("DOM.setFileInputFiles", nodeId=node["nodeId"], files=[AAB])
    ```
-   Processing takes ~40s. The release-name field **sometimes** auto-populates from the bundle
-   and sometimes does not, so poll for the `App bundles` section instead.
+   Processing takes ~40s. The release-name field **sometimes** auto-populates from the bundle,
+   so poll for the `App bundles` section instead.
 
    **Uploading burns the version code immediately, even if the release is never saved.** Play
    registers the bundle against the app on upload. Rebuild with the same code and every retry
@@ -215,8 +209,8 @@ js("""(() => { const el=document.querySelector(SEL);
   el.dispatchEvent(new Event('change',{bubbles:true})); })()""")
 ```
 
-On **`releases/N/prepare`** it is not enough: the DOM updates but the form stays pristine, so
-Save stays disabled and the value is discarded on reload. That page needs real key events:
+On **`releases/N/prepare`** the DOM updates but the form stays pristine, so Save stays disabled
+and the value is discarded on reload. That page needs real key events:
 
 ```python
 js("(() => { const t=document.querySelector('textarea'); t.scrollIntoView({block:'center'}); t.focus(); t.select(); })()")
