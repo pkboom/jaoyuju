@@ -35,9 +35,6 @@ public class UngiYear extends AppCompatActivity implements OnClickListener {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_ungi_year);
 
-        //icon in actionbar
-        getSupportActionBar().setDisplayShowHomeEnabled(true);
-        getSupportActionBar().setIcon(R.drawable.hemark);
 
         Calendar cal = Calendar.getInstance();
         year = cal.get(Calendar.YEAR);

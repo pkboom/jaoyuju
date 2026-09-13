@@ -70,8 +70,6 @@ public class Ungi extends AppCompatActivity implements OnClickListener {
         AdRequest adRequest = new AdRequest.Builder().build();
         mAdView.loadAd(adRequest);
 
-        getSupportActionBar().setDisplayShowHomeEnabled(true);
-        getSupportActionBar().setIcon(R.drawable.hemark);
 
         Calendar cal = Calendar.getInstance();
 

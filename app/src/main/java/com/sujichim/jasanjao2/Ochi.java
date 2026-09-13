@@ -67,9 +67,6 @@ public class Ochi extends AppCompatActivity implements View.OnClickListener {
         AdRequest adRequest = new AdRequest.Builder().build();
         mAdView.loadAd(adRequest);
 
-        //icon in actionbar
-        getSupportActionBar().setDisplayShowHomeEnabled(true);
-        getSupportActionBar().setIcon(R.drawable.hemark);
 
         Spinner sp1 = (Spinner) findViewById(R.id.spinner1);
         adapter1 = ArrayAdapter.createFromResource(this, R.array.spinnerArray1,

@@ -20,6 +20,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.android.gms.ads.AdRequest;
@@ -60,9 +61,7 @@ public class MainActivity extends AppCompatActivity implements OnClickListener {
         AdRequest adRequest = new AdRequest.Builder().build();
         mAdView.loadAd(adRequest);
 
-        //icon in actionbar
-        getSupportActionBar().setDisplayShowHomeEnabled(true);
-        getSupportActionBar().setIcon(R.drawable.hemark);
+        getSupportActionBar().setElevation(0);
 
         jaoyuju();
 
@@ -70,10 +69,9 @@ public class MainActivity extends AppCompatActivity implements OnClickListener {
 //        NotificationManager nm = (NotificationManager) getSystemService(NOTIFICATION_SERVICE);
 //        nm.cancelAll();
 
-        Button btn = (Button) findViewById(R.id.button_Jao);
-        btn.setOnClickListener(this);
+        findViewById(R.id.button_Jao).setOnClickListener(this);
 
-        btn = (Button) findViewById(R.id.button_body);
+        Button btn = (Button) findViewById(R.id.button_body);
         btn.setOnClickListener(this);
 
         btn = (Button) findViewById(R.id.button_hands);
@@ -85,22 +83,11 @@ public class MainActivity extends AppCompatActivity implements OnClickListener {
         btn = (Button) findViewById(R.id.button_Ungi);
         btn.setOnClickListener(this);
 
-        btn = (Button) findViewById(R.id.button_timer);
-        btn.setOnClickListener(this);
 
 /*
         btn = (Button) findViewById(R.id.button_UngiYear);
         btn.setOnClickListener(this);
 */
-
-        btn = (Button) findViewById(R.id.button_List);
-        btn.setOnClickListener(this);
-
-        btn = (Button) findViewById(R.id.button_Ochi);
-        btn.setOnClickListener(this);
-
-        btn = (Button) findViewById(R.id.button_Quiz);
-        btn.setOnClickListener(this);
 
     }
 
@@ -132,21 +119,6 @@ public class MainActivity extends AppCompatActivity implements OnClickListener {
             // Toast.makeText(getApplicationContext(), "개발중",
             // Toast.LENGTH_SHORT).show();
             startActivity(new Intent(this, Ungi.class));
-        } else if (__viewId1 == R.id.button_timer) {
-            startActivity(new Intent(this, TimerSec2.class));
-
-
-/*
-        case R.id.button_UngiYear:
-            startActivity(new Intent(this, UngiYear.class));
-            break;
-*/
-        } else if (__viewId1 == R.id.button_List) {
-            startActivity(new Intent(this, List.class));
-        } else if (__viewId1 == R.id.button_Ochi) {
-            startActivity(new Intent(this, Ochi.class));
-        } else if (__viewId1 == R.id.button_Quiz) {
-            startActivity(new Intent(this, MainQuiz.class));
         }
     }
 
@@ -791,24 +763,32 @@ public class MainActivity extends AppCompatActivity implements OnClickListener {
                 "庚", "辛"};
         String[] strJiChinese = {"子", "丑", "寅", "卯", "辰", "巳", "午", "未", "申",
                 "酉", "戌", "亥"};
-        Button btn = (Button) findViewById(R.id.button_Jao);
         getUnOne((intChun + 8) % 10);
         getGiOne(intJiDay);
-        // 삼합이면 장부가 서로 반대, 상극 상외이면 장부는 승허가 서로 같음
-        if (unOne == giOne || unOne == (giOne + 4) % 5
-                || unOne == (giOne + 6) % 5) {
-            btn.setText(strToday + "\n" + strChunChinese[intChun]
-                    + strJiChinese[intJiDay] + "일 " + strJiHour + "\n"
-                    + owhal[unOne] + owhal[giOne] + strMoreLess[moreless]
-                    + "\n" + jang[unOne] + strMoreLess2[moreless] + ", "
-                    + bu[giOne] + strMoreLess2[(moreless + 1) % 2]);
-        } else {
-            btn.setText(strToday + "\n" + strChunChinese[intChun]
-                    + strJiChinese[intJiDay] + "일 " + strJiHour + "\n"
-                    + owhal[unOne] + owhal[giOne] + strMoreLess[moreless]
-                    + "\n" + jang[unOne] + strMoreLess2[moreless] + ", "
-                    + bu[giOne] + strMoreLess2[moreless]);
+
+        // strJiHour is " <branch>시 <point>" — split so the point code can be badged
+        String hour = strJiHour.trim();
+        String point = "";
+        int sep = hour.lastIndexOf(' ');
+        if (sep > 0) {
+            point = hour.substring(sep + 1);
+            hour = hour.substring(0, sep);
         }
+
+        ((TextView) findViewById(R.id.tv_datetime)).setText(strToday);
+        ((TextView) findViewById(R.id.tv_pillars)).setText(strChunChinese[intChun]
+                + strJiChinese[intJiDay] + "일 " + hour);
+        TextView tvPoint = (TextView) findViewById(R.id.tv_point);
+        tvPoint.setText(point);
+        tvPoint.setVisibility(point.isEmpty() ? View.GONE : View.VISIBLE);
+        ((TextView) findViewById(R.id.tv_element)).setText(
+                owhal[unOne] + owhal[giOne] + strMoreLess[moreless]);
+
+        // 삼합이면 장부가 서로 반대, 상극 상외이면 장부는 승허가 서로 같음
+        int buMoreLess = (unOne == giOne || unOne == (giOne + 4) % 5
+                || unOne == (giOne + 6) % 5) ? (moreless + 1) % 2 : moreless;
+        ((TextView) findViewById(R.id.tv_organs)).setText(jang[unOne]
+                + strMoreLess2[moreless] + ", " + bu[giOne] + strMoreLess2[buMoreLess]);
         // Log.i("intJi", Integer.toString(intJi));
         // Log.i("intChun", Integer.toString(intChun));
 		/*

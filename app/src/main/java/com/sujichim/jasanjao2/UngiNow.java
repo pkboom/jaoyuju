@@ -30,9 +30,6 @@ public class UngiNow extends AppCompatActivity implements View.OnClickListener {
         AdRequest adRequest = new AdRequest.Builder().build();
         mAdView.loadAd(adRequest);
 
-        //icon in actionbar
-        getSupportActionBar().setDisplayShowHomeEnabled(true);
-        getSupportActionBar().setIcon(R.drawable.hemark);
 
         Button btn = (Button) findViewById(R.id.button11);
         btn.setOnClickListener(this);

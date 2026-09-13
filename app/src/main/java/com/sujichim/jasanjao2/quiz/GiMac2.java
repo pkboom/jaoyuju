@@ -34,9 +34,6 @@ public class GiMac2 extends AppCompatActivity implements View.OnClickListener {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_gi_mac);
 
-        //icon in actionbar
-        getSupportActionBar().setDisplayShowHomeEnabled(true);
-        getSupportActionBar().setIcon(R.drawable.hemark);
         getSupportActionBar().setTitle("");
 
         ArrayAdapter<CharSequence> adapter1;

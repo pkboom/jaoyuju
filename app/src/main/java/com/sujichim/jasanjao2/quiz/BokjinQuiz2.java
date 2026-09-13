@@ -33,9 +33,6 @@ public class BokjinQuiz2 extends AppCompatActivity implements View.OnClickListen
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_bokjin_quiz2);
 
-        //icon in actionbar
-        getSupportActionBar().setDisplayShowHomeEnabled(true);
-        getSupportActionBar().setIcon(R.drawable.hemark);
         getSupportActionBar().setTitle("");
 
         ArrayAdapter<CharSequence> adapter1;

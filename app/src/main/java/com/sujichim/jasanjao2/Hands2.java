@@ -17,9 +17,6 @@ import android.view.Window;
 import android.view.WindowManager;
 
 import com.github.chrisbanes.photoview.PhotoView;
-import com.google.android.gms.ads.AdRequest;
-import com.google.android.gms.ads.AdView;
-import com.google.android.gms.ads.MobileAds;
 
 import java.util.Locale;
 
@@ -39,7 +36,6 @@ public class Hands2 extends FragmentActivity {
 	 */
 	ViewPager mViewPager;
 
-	private AdView mAdView;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -61,11 +57,7 @@ public class Hands2 extends FragmentActivity {
 		mViewPager = (ViewPager) findViewById(R.id.pagerhands2);
 		mViewPager.setAdapter(mSectionsPagerAdapter);
 
-        MobileAds.initialize(getApplicationContext());
 
-		mAdView = (AdView) findViewById(R.id.adView);
-		AdRequest adRequest = new AdRequest.Builder().build();
-		mAdView.loadAd(adRequest);
 	}
 
 	@Override

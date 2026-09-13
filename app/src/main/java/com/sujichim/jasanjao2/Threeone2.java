@@ -26,8 +26,6 @@ public class Threeone2 extends AppCompatActivity implements OnClickListener {
         AdRequest adRequest = new AdRequest.Builder().build();
         mAdView.loadAd(adRequest);
 
-        getSupportActionBar().setDisplayShowHomeEnabled(true);
-        getSupportActionBar().setIcon(R.drawable.hemark);
 
         // create buttons
         Button btn = (Button) findViewById(R.id.button_yangil);

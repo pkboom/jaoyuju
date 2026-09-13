@@ -33,9 +33,6 @@ public class MacJin extends AppCompatActivity implements View.OnClickListener {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_mac_jin);
 
-        //icon in actionbar
-        getSupportActionBar().setDisplayShowHomeEnabled(true);
-        getSupportActionBar().setIcon(R.drawable.hemark);
         getSupportActionBar().setTitle("");
 
         ArrayAdapter<CharSequence> adapter1;

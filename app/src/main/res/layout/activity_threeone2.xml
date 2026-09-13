@@ -33,10 +33,10 @@
             android:layout_height="wrap_content"
             android:layout_marginLeft="5dp"
             android:layout_marginRight="5dp"
-            android:layout_marginTop="2dp"
+            android:layout_marginTop="12dp"
             android:background="@drawable/button_test"
             android:text="양실증"
-            android:textSize="23dp" />
+            android:textSize="24sp" />
 
         <Button
             android:id="@+id/button_sinsil"
@@ -44,10 +44,10 @@
             android:layout_height="wrap_content"
             android:layout_marginLeft="5dp"
             android:layout_marginRight="5dp"
-            android:layout_marginTop="2dp"
+            android:layout_marginTop="12dp"
             android:background="@drawable/button_test"
             android:text="신실증"
-            android:textSize="23dp" />
+            android:textSize="24sp" />
 
         <Button
             android:id="@+id/button_eumsil"
@@ -55,10 +55,10 @@
             android:layout_height="wrap_content"
             android:layout_marginLeft="5dp"
             android:layout_marginRight="5dp"
-            android:layout_marginTop="2dp"
+            android:layout_marginTop="12dp"
             android:background="@drawable/button_test"
             android:text="음실증"
-            android:textSize="23dp" />
+            android:textSize="24sp" />
 
         <Button
             android:id="@+id/button_bokjindo"
@@ -66,10 +66,10 @@
             android:layout_height="wrap_content"
             android:layout_marginLeft="5dp"
             android:layout_marginRight="5dp"
-            android:layout_marginTop="2dp"
+            android:layout_marginTop="12dp"
             android:background="@drawable/button_test"
             android:text="복진도"
-            android:textSize="23dp" />
+            android:textSize="24sp" />
 
         <Button
             android:id="@+id/button_8"
@@ -77,10 +77,10 @@
             android:layout_height="wrap_content"
             android:layout_marginLeft="5dp"
             android:layout_marginRight="5dp"
-            android:layout_marginTop="2dp"
+            android:layout_marginTop="12dp"
             android:background="@drawable/button_test"
             android:text="서금8혈"
-            android:textSize="23dp" />
+            android:textSize="24sp" />
     </LinearLayout>
 
 </RelativeLayout>

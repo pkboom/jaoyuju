@@ -35,8 +35,6 @@ public class TimerSec2 extends AppCompatActivity implements OnClickListener {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_timer_sec2);
 
-        getSupportActionBar().setDisplayShowHomeEnabled(true);
-        getSupportActionBar().setIcon(R.drawable.hemark);
 
         // 반복타이머 세팅
         String[] values1 = new String[12];

@@ -22,9 +22,6 @@ public class MainQuiz extends AppCompatActivity implements View.OnClickListener 
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main_quiz);
-        //icon in actionbar
-        getSupportActionBar().setDisplayShowHomeEnabled(true);
-        getSupportActionBar().setIcon(R.drawable.hemark);
         getSupportActionBar().setTitle("");
 
         Button btn = (Button) findViewById(R.id.button_ungi);
