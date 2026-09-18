@@ -8,8 +8,8 @@ android {
         applicationId "com.sujichim.jasanjao2"
         minSdk 24
         targetSdk 36
-        versionCode 101
-        versionName "5.5.3"
+        versionCode 104
+        versionName "5.5.6"
 
         manifestPlaceholders = [admobAppId: "ca-app-pub-1253642133922353~8199002621"]
     }
