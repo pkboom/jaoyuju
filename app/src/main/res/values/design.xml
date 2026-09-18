@@ -16,6 +16,7 @@
     <dimen name="tile_radius">16dp</dimen>
     <dimen name="tile_height">76dp</dimen>
     <dimen name="grid_gap">12dp</dimen>
+    <dimen name="card_gap">12dp</dimen>
 
     <style name="InfoCaption">
         <item name="android:textSize">21sp</item>
@@ -128,6 +129,45 @@
         <item name="cornerRadius">@dimen/tile_radius</item>
         <item name="rippleColor">@color/accent_soft</item>
         <item name="elevation">0dp</item>
+    </style>
+
+    <style name="SectionTitle">
+        <item name="android:textSize">19sp</item>
+        <item name="android:textColor">@color/text_secondary</item>
+        <item name="android:fontFamily">sans-serif-medium</item>
+        <item name="android:letterSpacing">0.06</item>
+    </style>
+
+    <style name="FieldLabel">
+        <item name="android:textSize">18sp</item>
+        <item name="android:textColor">@color/text_secondary</item>
+        <item name="android:fontFamily">sans-serif</item>
+        <item name="android:lineSpacingMultiplier">1.2</item>
+    </style>
+
+    <style name="FieldValue">
+        <item name="android:textSize">20sp</item>
+        <item name="android:textColor">@color/text_primary</item>
+        <item name="android:fontFamily">sans-serif-medium</item>
+        <item name="android:lineSpacingMultiplier">1.25</item>
+    </style>
+
+    <style name="TableHeader">
+        <item name="android:textSize">18sp</item>
+        <item name="android:textColor">@color/text_secondary</item>
+        <item name="android:fontFamily">sans-serif-medium</item>
+        <item name="android:gravity">center</item>
+    </style>
+
+    <style name="TableCell">
+        <item name="android:textSize">19sp</item>
+        <item name="android:textColor">@color/text_primary</item>
+        <item name="android:fontFamily">sans-serif-medium</item>
+        <item name="android:gravity">center</item>
+    </style>
+
+    <style name="TableRowLabel" parent="TableCell">
+        <item name="android:gravity">left|center_vertical</item>
     </style>
 
 </resources>

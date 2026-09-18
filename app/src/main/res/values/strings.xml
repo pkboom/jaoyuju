@@ -23,25 +23,32 @@
     <string name="title_activity_sinsil">신실증</string>
     <string name="title_activity_eumsil">음실증</string>
     <string name="title_activity_bokjindo">Bokjindo</string>
-    <string name="yangsil">질병: 변비, 설사, 장염, 소화불량, 가슴답답, 배에 가스 참, 고혈압, 3,4요추요통(디스크)</string>
-    <string name="yangsil2">통치방: 1)상응요법: 증상 1~2곳 \n
-       2)기맥요법: 대장제법(폐보법)\n
-       3)반지요법: 1,2지\n
-       4)승증장부 기모혈: A3, A12, A16, A18, N18, E22</string>
-    <string name="sinsil">질병: 피로, 과로, 적으로 배꼽밑에 차가운 어혈,
-                수족냉증, 하복부통증(냉증), 알러지, 류머티즘, 월경통, 소변분리,
-                 제 1,2선골, 엉치 허리 통증  </string>
-    <string name="sinsil2">통치방: 1)상응요법: 증상 1~2곳 \n
-       2)기맥요법: 신제법(심보법)\n
-       3)반지요법: 1,4,5지\n
-       4)승증장부 기모혈: A5, A6, A12, C1, J23, N18</string>
-    <string name="eumsil">질병: 영양과다, 배설이 잘 안됨, 비만초래,
-               당뇨, 성인병, 콜레스테롤, 제2선골 이하의 요통, 좌골신경통, 관절통,
-               사지무력(특히 다리, 잘 넘어짐)</string>
-    <string name="eumsil2">통치방: 1)상응요법: 증상 1~2곳 \n
-       2)기맥요법: 비제법(신보법)\n
-       3)반지요법: 2, 3, ,4지\n
-       4)승증장부 기모혈: A3, A16, A18, F19, C1, N17</string>
+    <!-- 삼일체형: 증(症)별 질병과 통치방 -->
+    <string name="label_disease">질병</string>
+    <string name="label_treatment">통치방</string>
+    <string name="label_sangeung">상응요법</string>
+    <string name="label_gimaek">기맥요법</string>
+    <string name="label_banji">반지요법</string>
+    <string name="label_gimohyeol">승증장부 기모혈</string>
+
+    <string name="yangsil_disease">변비, 설사, 장염, 소화불량, 가슴답답, 배에 가스 참, 고혈압, 3,4요추요통(디스크)</string>
+    <string name="yangsil_sangeung">증상 1~2곳</string>
+    <string name="yangsil_gimaek">대장제법(폐보법)</string>
+    <string name="yangsil_banji">1,2지</string>
+    <string name="yangsil_gimohyeol">A3, A12, A16, A18, N18, E22</string>
+
+    <string name="sinsil_disease">피로, 과로, 적으로 배꼽밑에 차가운 어혈, 수족냉증, 하복부통증(냉증), 알러지, 류머티즘, 월경통, 소변분리, 제1,2선골, 엉치 허리 통증</string>
+    <string name="sinsil_sangeung">증상 1~2곳</string>
+    <string name="sinsil_gimaek">신제법(심보법)</string>
+    <string name="sinsil_banji">1,4,5지</string>
+    <string name="sinsil_gimohyeol">A5, A6, A12, C1, J23, N18</string>
+
+    <string name="eumsil_disease">영양과다, 배설이 잘 안됨, 비만초래, 당뇨, 성인병, 콜레스테롤, 제2선골 이하의 요통, 좌골신경통, 관절통, 사지무력(특히 다리, 잘 넘어짐)</string>
+    <string name="eumsil_sangeung">증상 1~2곳</string>
+    <string name="eumsil_gimaek">비제법(신보법)</string>
+    <string name="eumsil_banji">2,3,4지</string>
+    <string name="eumsil_gimohyeol">A3, A16, A18, F19, C1, N17</string>
+
     <string name="title_activity_jaotable">Jaotable</string>
     <string name="title_activity_eightholes">서금8혈</string>
     <string name="title_activity_threeosix">입태일 306일</string>
