@@ -14,6 +14,8 @@ import android.widget.DatePicker;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.google.android.material.button.MaterialButtonToggleGroup;
+
 import com.google.android.gms.ads.AdRequest;
 import com.google.android.gms.ads.AdView;
 import com.google.android.gms.ads.MobileAds;
@@ -127,14 +129,9 @@ public class Ungi extends AppCompatActivity implements OnClickListener {
                 alert.show();
             }
         } else if (__viewId == R.id.button_plus) {
-            new DatePickerDialog(Ungi.this, AlertDialog.THEME_HOLO_LIGHT, dateSetListener, yearSelect,
-                    monthSelect, daySelect).show();
-            plusMinus = true;
+            showDatePicker(true);
         } else if (__viewId == R.id.button_minus) {
-            new DatePickerDialog(Ungi.this, AlertDialog.THEME_HOLO_LIGHT, dateSetListener, yearLunar,
-                    monthLunar, dayLunar).show();
-            plusMinus = false;
-            DialogSelectOption();
+            showDatePicker(false);
         }
     }
 
@@ -810,29 +807,42 @@ public class Ungi extends AppCompatActivity implements OnClickListener {
         renderResult();
     }
 
-    private void DialogSelectOption() {
-        final CharSequence[] items = {"평달", "윤달"};
+    /**
+     * Asks for the date in one dialog.
+     *
+     * The lunar path used to stack the 평달/윤달 chooser on top of the date picker, so two dialogs
+     * sat on screen at once and the month had to be qualified before it had been picked. The
+     * choice belongs with the date, so it rides in the same dialog and is read when 확인 is
+     * tapped. The solar path shows the same dialog without it.
+     */
+    private void showDatePicker(final boolean solar) {
+        View content = getLayoutInflater().inflate(R.layout.dialog_date_select, null);
+        final DatePicker picker = content.findViewById(R.id.date_picker);
+        final MaterialButtonToggleGroup leapToggle = content.findViewById(R.id.toggle_leap);
 
-        AlertDialog.Builder builder = new AlertDialog.Builder(this);
-        // 여기서 this는 Activity의 this
+        if (solar) {
+            picker.updateDate(yearSelect, monthSelect, daySelect);
+            leapToggle.setVisibility(View.GONE);
+        } else {
+            picker.updateDate(yearLunar, monthLunar, dayLunar);
+            leapToggle.check(isLeapMonth == 1 ? R.id.button_leap_month : R.id.button_plain_month);
+        }
 
-        // 여기서 부터는 알림창의 속성 설정
-        builder.setTitle("평달/윤달 선택") // 제목 설정
-                .setItems(items, new DialogInterface.OnClickListener() { // 목록
-                    // 클릭시
-                    // 설정
-                    public void onClick(DialogInterface dialog,
-                                        int index) {
-                        // Toast.makeText(getApplicationContext(),
-                        // items[index], Toast.LENGTH_SHORT)
-                        // .show();
-                        // 윤달이면 1, 평달이면 0. 되돌리지 않으면 다음 선택까지 윤달로 남는다.
-                        isLeapMonth = (index == 1) ? 1 : 0;
+        new AlertDialog.Builder(this)
+                .setTitle(solar ? "양력 날짜" : "음력 날짜")
+                .setView(content)
+                .setNegativeButton("취소", null)
+                .setPositiveButton("확인", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        plusMinus = solar;
+                        isLeapMonth = !solar && leapToggle.getCheckedButtonId() == R.id.button_leap_month
+                                ? 1 : 0;
+                        dateSetListener.onDateSet(picker, picker.getYear(), picker.getMonth(),
+                                picker.getDayOfMonth());
                     }
-                });
-
-        AlertDialog dialog = builder.create(); // 알림창 객체 생성
-        dialog.show(); // 알림창 띄우기
+                })
+                .show();
     }
 
     public void copyExcelDataToDatabase() {
